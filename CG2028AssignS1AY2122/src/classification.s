@@ -8,7 +8,7 @@
 @ CG2028 Assignment, Sem 2, AY 2021/21
 @ (c) CG2028 Teaching Team, ECE NUS, 2021
 
-@ student 1: Name: , Matriculation No.:
+@ student 1: Name: Nigel Ng, Matriculation No.: A0217408H
 @ student 2: Name: , Matriculation No.:
 @ eg: student 1: Name: John Doe , Matriculation No.: A021234N
 
