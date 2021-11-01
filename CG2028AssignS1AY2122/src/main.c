@@ -43,9 +43,9 @@ int classification_c(int N, int* points, int* label, int* sample)
 	}
 
 	// print all distances
-	//for (i=0; i<N; i++){
-	//	printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
-	//}
+//	for (i=0; i<N; i++){
+//		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
+//	}
 
 	// find the k=1 nearest neighbors
 
