@@ -616,3 +616,15 @@ java.io.FileNotFoundException: C:\Users\ngnig\Desktop\CG2028_Assignment\CG2028As
 	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
 	at com.crt.ctrlcenter.launch.BuildLaunchUtils$2.run(Unknown Source)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-07 18:00:58.507
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:00:58.507
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:00:58.507
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:00:58.507
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-07 18:01:22.917
+!MESSAGE Drivers loaded in 1803 milliseconds

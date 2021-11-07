@@ -114,11 +114,8 @@ GET_EUCLIDEAN:
 @ compare with min_distance. If lower, set label and min_distance
 	LDR R6, =min_distance	@get address of min distance
 	LDR R7, =curr_distance	@get address of curr distance
-	LDR R4, [R7]	@loads value of current distance into R4
-	LDR R5, [R6]	@loads value of min distance into R5
-
-	CMP R4, R5	@compare current and min distance
-	BLE SET_NEW_DISTANCE	@if current distance is <= min_distance, set new distance
+	LDR R4, [R6]	@loads value of min distance into R4
+	LDR R5, [R7]	@loads value of currrent distance into R5
 
 
 @ at this stage curr_distance is known
@@ -132,8 +129,7 @@ RETURN_VALUE:
 		BX LR
 
 @sets new minimum distance. at this stage, [R4] <= [R5]
-SET_NEW_DISTANCE:
-	BX LR
+
 
 @label: .word value
 

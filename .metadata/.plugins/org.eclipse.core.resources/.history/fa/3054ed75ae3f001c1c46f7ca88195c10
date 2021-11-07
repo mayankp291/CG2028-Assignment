@@ -36,11 +36,6 @@ LDR R6,=curr_class	@extract value of x
 MOV R7, #0
 STR R7, [R6]
 
-@ initialise min_distance to max
-LDR R6, =min_distance
-MOV R7, #0xFFFFFFFF
-STR R7, [R6]
-
 @ extract N into register 8 for comparison later.
 MOV R8, R0 @extract N into R8
 
@@ -84,56 +79,16 @@ GET_EUCLIDEAN:
 
 @ calculate euclidean distance
 
-@load x, y
-	LDR R6, =point_x
-	LDR R7, =point_y
-
-@get x^2
-	LDR R4, [R6]	@stores x value into R4
-	LDR R5, [R6]	@copies x value into R5
-	MUL R4, R5		@calculate the squared value of x
-	LDR R6, =x_s	@get address of x squared variable
-	STR R4, [R6]	@stores x^2 into x_s variable
-@get y^2
-	LDR R4, [R7]	@stores y value into R4
-	LDR R5, [R7]	@copies y value into R5
-	MUL R4, R5		@calculate the squared value of x
-	LDR R6, =y_s	@get address of y squared variable
-	STR R4, [R6]	@stores y^2 into y_s variable
-
-@add both variables to get curr_distance
-	LDR R6, =x_s 	@get address of x^2
-	LDR R7, =y_s	@get address of y^2
-	LDR R4, [R6]	@load x^2 into R4
-	LDR R5, [R7]	@load y^2 into R5
-	ADD R4, R5		@add x^2 and y^2 into R4
-
-	LDR R6, =curr_distance	@get address of current distance
-	STR R4, [R6]	@store x^2 + y^2 into curr_distance
-
 @ compare with min_distance. If lower, set label and min_distance
-	LDR R6, =min_distance	@get address of min distance
-	LDR R7, =curr_distance	@get address of curr distance
-	LDR R4, [R7]	@loads value of current distance into R4
-	LDR R5, [R6]	@loads value of min distance into R5
 
-	CMP R4, R5	@compare current and min distance
-	BLE SET_NEW_DISTANCE	@if current distance is <= min_distance, set new distance
-
-
-@ at this stage curr_distance is known
-
-	BX LR
-@sets R0 to the class
-RETURN_VALUE:
-		LDR R7,=curr_distance	@gets current class reading (most updated)
-		LDR R0, [R7]
-		@MOV R0, R4
 		BX LR
 
-@sets new minimum distance. at this stage, [R4] <= [R5]
-SET_NEW_DISTANCE:
-	BX LR
+@sets R0 to the class
+RETURN_VALUE:
+		LDR R7,=point_y	@gets current class reading (most updated)
+		LDR R0, [R7]
+		BX LR
+
 
 @label: .word value
 
@@ -146,9 +101,6 @@ SET_NEW_DISTANCE:
 .lcomm point_y 4	@y coordinate of a reference point (to be modified (N - 1) times)
 .lcomm curr_label 1 @current label of the point of refernece
 
-.lcomm x_s 4 @x squared
-.lcomm y_s 4 @y squared
-
 .lcomm curr_distance 4
 .lcomm min_distance 4
-.lcomm curr_class 1	@most updated, correct class
+.lcomm curr_class 1

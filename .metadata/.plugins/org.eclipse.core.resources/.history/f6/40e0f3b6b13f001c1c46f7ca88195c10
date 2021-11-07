@@ -36,11 +36,6 @@ LDR R6,=curr_class	@extract value of x
 MOV R7, #0
 STR R7, [R6]
 
-@ initialise min_distance to max
-LDR R6, =min_distance
-MOV R7, #0xFFFFFFFF
-STR R7, [R6]
-
 @ extract N into register 8 for comparison later.
 MOV R8, R0 @extract N into R8
 
@@ -112,13 +107,6 @@ GET_EUCLIDEAN:
 	STR R4, [R6]	@store x^2 + y^2 into curr_distance
 
 @ compare with min_distance. If lower, set label and min_distance
-	LDR R6, =min_distance	@get address of min distance
-	LDR R7, =curr_distance	@get address of curr distance
-	LDR R4, [R7]	@loads value of current distance into R4
-	LDR R5, [R6]	@loads value of min distance into R5
-
-	CMP R4, R5	@compare current and min distance
-	BLE SET_NEW_DISTANCE	@if current distance is <= min_distance, set new distance
 
 
 @ at this stage curr_distance is known
@@ -126,14 +114,13 @@ GET_EUCLIDEAN:
 	BX LR
 @sets R0 to the class
 RETURN_VALUE:
-		LDR R7,=curr_distance	@gets current class reading (most updated)
+		LDR R7,=curr_class	@gets current class reading (most updated)
 		LDR R0, [R7]
 		@MOV R0, R4
 		BX LR
 
 @sets new minimum distance. at this stage, [R4] <= [R5]
-SET_NEW_DISTANCE:
-	BX LR
+
 
 @label: .word value
 
