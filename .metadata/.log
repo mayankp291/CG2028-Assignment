@@ -584,3 +584,35 @@ Binding(CTRL+T,
 
 !ENTRY com.crt.log 1 0 2021-11-07 16:55:02.528
 !MESSAGE Drivers loaded in 1734 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-07 17:02:36.721
+!MESSAGE (crt_emu_cm3_nxp) terminating due to loss of debug control
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 17:02:36.721
+!MESSAGE (crt_emu_cm3_nxp) terminating due to loss of debug control
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2021-11-07 17:27:47.567
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\ngnig\Desktop\CG2028_Assignment\CG2028AssignS1AY2122\Debug\CG2028AssignS1AY2122.axf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:124)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:286)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:143)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at com.crt.ctrlcenter.launch.BuildLaunchUtils$2.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2021-11-07 17:27:47.567
+!MESSAGE C:\Users\ngnig\Desktop\CG2028_Assignment\CG2028AssignS1AY2122\Debug\CG2028AssignS1AY2122.axf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\ngnig\Desktop\CG2028_Assignment\CG2028AssignS1AY2122\Debug\CG2028AssignS1AY2122.axf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:124)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:286)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:143)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:106)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:94)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:855)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:704)
+	at com.crt.ctrlcenter.launch.BuildLaunchUtils$2.run(Unknown Source)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)

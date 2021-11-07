@@ -53,7 +53,7 @@ STR R7, [R6]
 LOOP:
 	BL GET_EUCLIDEAN
 	SUBS R8, #1
-	BNE LOOP
+	BLE LOOP
 
 @ prepare value to return (class) to C program in R0
 BL RETURN_VALUE

@@ -37,7 +37,7 @@ MOV R7, #0
 STR R7, [R6]
 
 @ extract N into register 8 for comparison later.
-MOV R8, R0 @extract N into R8
+LDR R8, [R0] @extract N into R8
 
 @ extract sample_x
 LDR R7, [R3]	@extract value of x
@@ -50,10 +50,10 @@ LDR R6, =sample_y
 STR R7, [R6]
 
 @ main chunk to calculate min_distance
-LOOP:
+get_min_distance:
 	BL GET_EUCLIDEAN
 	SUBS R8, #1
-	BNE LOOP
+	BNE get_mind_distance
 
 @ prepare value to return (class) to C program in R0
 BL RETURN_VALUE
@@ -78,10 +78,19 @@ GET_EUCLIDEAN:
 	STR R9, [R6]
 
 @ calculate euclidean distance
+	LDR R6, =point_x
+	LDR R7, =point_y
+	LDR R4, [R6] @load x value into R4
+	LDR R5, [R7] @load y value into R5
+
+@ optimised square algorithm - x^2 = x + x .. (x multiples)
+
+@initialise mul_count to x.
+
 
 @ compare with min_distance. If lower, set label and min_distance
 
-		BX LR
+		BX
 
 @sets R0 to the class
 RETURN_VALUE:
@@ -104,3 +113,5 @@ RETURN_VALUE:
 .lcomm curr_distance 4
 .lcomm min_distance 4
 .lcomm curr_class 1
+
+.lcomm mul_count 4

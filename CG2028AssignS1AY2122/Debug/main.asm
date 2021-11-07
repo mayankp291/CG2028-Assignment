@@ -33,7 +33,7 @@
   25 0026 0000     		.align	2
   26              	.LC0:
   27 0028 23000000 		.word	35
-  28 002c 0A000000 		.word	10
+  28 002c 00000000 		.word	0
   29 0030 00000000 		.word	0
   30 0034 0F000000 		.word	15
   31 0038 0A000000 		.word	10
@@ -108,7 +108,7 @@
   16:../src/main.c **** 	// (decimal fixed point with 1 fractional decimal digits precision)
   17:../src/main.c **** 	// which are scaled up to allow them to be used integers
   18:../src/main.c **** 
-  19:../src/main.c **** 	int points[16] = {35, 10, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
+  19:../src/main.c **** 	int points[16] = {35, 0, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
   86              		.loc 1 19 0
   87 000c 40F20003 		movw	r3, #:lower16:.LC0
   88 0010 C0F20003 		movt	r3, #:upper16:.LC0
@@ -396,16 +396,16 @@
  325              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:19     .rodata:00000000 $d
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:20     .rodata:00000000 .LC3
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:23     .rodata:00000014 .LC4
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:26     .rodata:00000028 .LC0
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:44     .rodata:00000068 .LC1
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:54     .rodata:00000088 .LC2
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:58     .text.main:00000000 $t
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:63     .text.main:00000000 main
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:150    .text.classification_c:00000000 classification_c
-C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:145    .text.classification_c:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:19     .rodata:00000000 $d
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:20     .rodata:00000000 .LC3
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:23     .rodata:00000014 .LC4
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:26     .rodata:00000028 .LC0
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:44     .rodata:00000068 .LC1
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:54     .rodata:00000088 .LC2
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:58     .text.main:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:63     .text.main:00000000 main
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:150    .text.classification_c:00000000 classification_c
+C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:145    .text.classification_c:00000000 $t
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

@@ -37,7 +37,7 @@ MOV R7, #0
 STR R7, [R6]
 
 @ extract N into register 8 for comparison later.
-MOV R8, R0 @extract N into R8
+LDR R8, [R0] @extract N into R8
 
 @ extract sample_x
 LDR R7, [R3]	@extract value of x

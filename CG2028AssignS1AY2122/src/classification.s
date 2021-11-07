@@ -37,7 +37,7 @@ MOV R7, #0
 STR R7, [R6]
 
 @ extract N into register 8 for comparison later.
-LDR R8, [R0] @extract N into R8
+MOV R8, R0 @extract N into R8
 
 @ extract sample_x
 LDR R7, [R3]	@extract value of x
@@ -53,7 +53,7 @@ STR R7, [R6]
 LOOP:
 	BL GET_EUCLIDEAN
 	SUBS R8, #1
-	BLE LOOP
+	BNE LOOP
 
 @ prepare value to return (class) to C program in R0
 BL RETURN_VALUE

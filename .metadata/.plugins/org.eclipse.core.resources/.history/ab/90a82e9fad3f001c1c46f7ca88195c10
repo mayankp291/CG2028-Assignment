@@ -52,7 +52,8 @@ STR R7, [R6]
 @ main chunk to calculate min_distance
 LOOP:
 	BL GET_EUCLIDEAN
-	SUBS R8, #1
+	SUB R8, #1
+	CMP R8, #0
 	BNE LOOP
 
 @ prepare value to return (class) to C program in R0
@@ -85,8 +86,9 @@ GET_EUCLIDEAN:
 
 @sets R0 to the class
 RETURN_VALUE:
-		LDR R7,=point_y	@gets current class reading (most updated)
-		LDR R0, [R7]
+		@LDR R7,=point_y	@gets current class reading (most updated)
+		@LDR R0, [R7]
+		MOV R0, R8
 		BX LR
 
 
