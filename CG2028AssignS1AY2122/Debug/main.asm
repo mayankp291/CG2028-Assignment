@@ -33,7 +33,7 @@
   25 0026 0000     		.align	2
   26              	.LC0:
   27 0028 23000000 		.word	35
-  28 002c 00000000 		.word	0
+  28 002c 0A000000 		.word	10
   29 0030 00000000 		.word	0
   30 0034 0F000000 		.word	15
   31 0038 0A000000 		.word	10
@@ -108,7 +108,7 @@
   16:../src/main.c **** 	// (decimal fixed point with 1 fractional decimal digits precision)
   17:../src/main.c **** 	// which are scaled up to allow them to be used integers
   18:../src/main.c **** 
-  19:../src/main.c **** 	int points[16] = {35, 0, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
+  19:../src/main.c **** 	int points[16] = {35, 10, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
   86              		.loc 1 19 0
   87 000c 40F20003 		movw	r3, #:lower16:.LC0
   88 0010 C0F20003 		movt	r3, #:upper16:.LC0
@@ -174,279 +174,238 @@
  140 00a4 FEE7     		b	.L2
  141              		.cfi_endproc
  142              	.LFE0:
- 144 00a6 00BF     		.section	.rodata
+ 144 00a6 00BF     		.section	.text.classification_c,"ax",%progbits
  145              		.align	2
- 146              	.LC5:
- 147 0090 64256420 		.ascii	"d%d = %d, class = %d \012\000"
- 147      3D202564 
- 147      2C20636C 
- 147      61737320 
- 147      3D202564 
- 148 00a7 00       		.section	.text.classification_c,"ax",%progbits
- 149              		.align	2
- 150              		.global	classification_c
- 151              		.thumb
- 152              		.thumb_func
- 154              	classification_c:
- 155              	.LFB1:
+ 146              		.global	classification_c
+ 147              		.thumb
+ 148              		.thumb_func
+ 150              	classification_c:
+ 151              	.LFB1:
   28:../src/main.c **** }
   29:../src/main.c **** 
   30:../src/main.c **** int classification_c(int N, int* points, int* label, int* sample)
   31:../src/main.c **** { 	// The implementation below is meant only for verifying your results.
- 156              		.loc 1 31 0
- 157              		.cfi_startproc
- 158              		@ args = 0, pretend = 0, frame = 40
- 159              		@ frame_needed = 1, uses_anonymous_args = 0
- 160 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
- 161              	.LCFI3:
- 162              		.cfi_def_cfa_offset 28
- 163              		.cfi_offset 14, -4
- 164              		.cfi_offset 9, -8
- 165              		.cfi_offset 8, -12
- 166              		.cfi_offset 7, -16
- 167              		.cfi_offset 6, -20
- 168              		.cfi_offset 5, -24
- 169              		.cfi_offset 4, -28
- 170 0004 8BB0     		sub	sp, sp, #44
- 171              	.LCFI4:
- 172              		.cfi_def_cfa_offset 72
- 173 0006 00AF     		add	r7, sp, #0
- 174              	.LCFI5:
- 175              		.cfi_def_cfa_register 7
- 176 0008 F860     		str	r0, [r7, #12]
- 177 000a B960     		str	r1, [r7, #8]
- 178 000c 7A60     		str	r2, [r7, #4]
- 179 000e 3B60     		str	r3, [r7, #0]
- 180              		.loc 1 31 0
- 181 0010 6B46     		mov	r3, sp
- 182 0012 1E46     		mov	r6, r3
+ 152              		.loc 1 31 0
+ 153              		.cfi_startproc
+ 154              		@ args = 0, pretend = 0, frame = 40
+ 155              		@ frame_needed = 1, uses_anonymous_args = 0
+ 156              		@ link register save eliminated.
+ 157 0000 2DE9F003 		push	{r4, r5, r6, r7, r8, r9}
+ 158              	.LCFI3:
+ 159              		.cfi_def_cfa_offset 24
+ 160              		.cfi_offset 9, -4
+ 161              		.cfi_offset 8, -8
+ 162              		.cfi_offset 7, -12
+ 163              		.cfi_offset 6, -16
+ 164              		.cfi_offset 5, -20
+ 165              		.cfi_offset 4, -24
+ 166 0004 8AB0     		sub	sp, sp, #40
+ 167              	.LCFI4:
+ 168              		.cfi_def_cfa_offset 64
+ 169 0006 00AF     		add	r7, sp, #0
+ 170              	.LCFI5:
+ 171              		.cfi_def_cfa_register 7
+ 172 0008 F860     		str	r0, [r7, #12]
+ 173 000a B960     		str	r1, [r7, #8]
+ 174 000c 7A60     		str	r2, [r7, #4]
+ 175 000e 3B60     		str	r3, [r7, #0]
+ 176              		.loc 1 31 0
+ 177 0010 6B46     		mov	r3, sp
+ 178 0012 1E46     		mov	r6, r3
   32:../src/main.c **** 	
   33:../src/main.c **** 	int i,j,n;
   34:../src/main.c **** 	int class;// returned labels of k=1 nearest neighbors
   35:../src/main.c **** 	int d[N]; // squared Euclidean distance
- 183              		.loc 1 35 0
- 184 0014 F868     		ldr	r0, [r7, #12]
- 185 0016 00F1FF33 		add	r3, r0, #-1
- 186 001a 7B61     		str	r3, [r7, #20]
- 187 001c 0146     		mov	r1, r0
- 188 001e 0A46     		mov	r2, r1
- 189 0020 4FF00003 		mov	r3, #0
- 190 0024 4FEAD261 		lsr	r1, r2, #27
- 191 0028 4FEA4319 		lsl	r9, r3, #5
- 192 002c 41EA0909 		orr	r9, r1, r9
- 193 0030 4FEA4218 		lsl	r8, r2, #5
- 194 0034 0146     		mov	r1, r0
- 195 0036 0A46     		mov	r2, r1
- 196 0038 4FF00003 		mov	r3, #0
- 197 003c 4FEAD261 		lsr	r1, r2, #27
- 198 0040 4FEA4315 		lsl	r5, r3, #5
- 199 0044 0D43     		orrs	r5, r5, r1
- 200 0046 4FEA4214 		lsl	r4, r2, #5
- 201 004a 0346     		mov	r3, r0
- 202 004c 4FEA8303 		lsl	r3, r3, #2
- 203 0050 03F10703 		add	r3, r3, #7
- 204 0054 03F10703 		add	r3, r3, #7
- 205 0058 4FEAD303 		lsr	r3, r3, #3
- 206 005c 4FEAC303 		lsl	r3, r3, #3
- 207 0060 ADEB030D 		sub	sp, sp, r3
- 208 0064 6B46     		mov	r3, sp
- 209 0066 03F10703 		add	r3, r3, #7
- 210 006a 4FEAD303 		lsr	r3, r3, #3
- 211 006e 4FEAC303 		lsl	r3, r3, #3
- 212 0072 3B61     		str	r3, [r7, #16]
+ 179              		.loc 1 35 0
+ 180 0014 F868     		ldr	r0, [r7, #12]
+ 181 0016 00F1FF33 		add	r3, r0, #-1
+ 182 001a 7B61     		str	r3, [r7, #20]
+ 183 001c 0146     		mov	r1, r0
+ 184 001e 0A46     		mov	r2, r1
+ 185 0020 4FF00003 		mov	r3, #0
+ 186 0024 4FEAD261 		lsr	r1, r2, #27
+ 187 0028 4FEA4319 		lsl	r9, r3, #5
+ 188 002c 41EA0909 		orr	r9, r1, r9
+ 189 0030 4FEA4218 		lsl	r8, r2, #5
+ 190 0034 0146     		mov	r1, r0
+ 191 0036 0A46     		mov	r2, r1
+ 192 0038 4FF00003 		mov	r3, #0
+ 193 003c 4FEAD261 		lsr	r1, r2, #27
+ 194 0040 4FEA4315 		lsl	r5, r3, #5
+ 195 0044 0D43     		orrs	r5, r5, r1
+ 196 0046 4FEA4214 		lsl	r4, r2, #5
+ 197 004a 0346     		mov	r3, r0
+ 198 004c 4FEA8303 		lsl	r3, r3, #2
+ 199 0050 03F10703 		add	r3, r3, #7
+ 200 0054 03F10703 		add	r3, r3, #7
+ 201 0058 4FEAD303 		lsr	r3, r3, #3
+ 202 005c 4FEAC303 		lsl	r3, r3, #3
+ 203 0060 ADEB030D 		sub	sp, sp, r3
+ 204 0064 6B46     		mov	r3, sp
+ 205 0066 03F10703 		add	r3, r3, #7
+ 206 006a 4FEAD303 		lsr	r3, r3, #3
+ 207 006e 4FEAC303 		lsl	r3, r3, #3
+ 208 0072 3B61     		str	r3, [r7, #16]
   36:../src/main.c **** 	int d1;
   37:../src/main.c **** 
   38:../src/main.c **** 	
   39:../src/main.c **** 	// calculate the squared distance between test sample and each training data points
   40:../src/main.c **** 	for (i=0; i<N; i++){
- 213              		.loc 1 40 0
- 214 0074 4FF00003 		mov	r3, #0
- 215 0078 7B62     		str	r3, [r7, #36]
- 216 007a 38E0     		b	.L4
- 217              	.L5:
+ 209              		.loc 1 40 0
+ 210 0074 4FF00003 		mov	r3, #0
+ 211 0078 7B62     		str	r3, [r7, #36]
+ 212 007a 38E0     		b	.L4
+ 213              	.L5:
   41:../src/main.c **** 		d[i] = (points[2*i]-sample[0]) * (points[2*i]-sample[0])
- 218              		.loc 1 41 0 discriminator 2
- 219 007c 7B6A     		ldr	r3, [r7, #36]
- 220 007e 4FEAC303 		lsl	r3, r3, #3
- 221 0082 BA68     		ldr	r2, [r7, #8]
- 222 0084 D318     		adds	r3, r2, r3
- 223 0086 1A68     		ldr	r2, [r3, #0]
- 224 0088 3B68     		ldr	r3, [r7, #0]
- 225 008a 1B68     		ldr	r3, [r3, #0]
- 226 008c D31A     		subs	r3, r2, r3
- 227 008e 7A6A     		ldr	r2, [r7, #36]
- 228 0090 4FEAC202 		lsl	r2, r2, #3
- 229 0094 B968     		ldr	r1, [r7, #8]
- 230 0096 8A18     		adds	r2, r1, r2
- 231 0098 1168     		ldr	r1, [r2, #0]
- 232 009a 3A68     		ldr	r2, [r7, #0]
- 233 009c 1268     		ldr	r2, [r2, #0]
- 234 009e 8A1A     		subs	r2, r1, r2
- 235 00a0 02FB03F2 		mul	r2, r2, r3
+ 214              		.loc 1 41 0 discriminator 2
+ 215 007c 7B6A     		ldr	r3, [r7, #36]
+ 216 007e 4FEAC303 		lsl	r3, r3, #3
+ 217 0082 BA68     		ldr	r2, [r7, #8]
+ 218 0084 D318     		adds	r3, r2, r3
+ 219 0086 1A68     		ldr	r2, [r3, #0]
+ 220 0088 3B68     		ldr	r3, [r7, #0]
+ 221 008a 1B68     		ldr	r3, [r3, #0]
+ 222 008c D31A     		subs	r3, r2, r3
+ 223 008e 7A6A     		ldr	r2, [r7, #36]
+ 224 0090 4FEAC202 		lsl	r2, r2, #3
+ 225 0094 B968     		ldr	r1, [r7, #8]
+ 226 0096 8A18     		adds	r2, r1, r2
+ 227 0098 1168     		ldr	r1, [r2, #0]
+ 228 009a 3A68     		ldr	r2, [r7, #0]
+ 229 009c 1268     		ldr	r2, [r2, #0]
+ 230 009e 8A1A     		subs	r2, r1, r2
+ 231 00a0 02FB03F2 		mul	r2, r2, r3
   42:../src/main.c **** 		+ (points[2*i+1]-sample[1])*(points[2*i+1]-sample[1]);
- 236              		.loc 1 42 0 discriminator 2
- 237 00a4 7B6A     		ldr	r3, [r7, #36]
- 238 00a6 4FEAC303 		lsl	r3, r3, #3
- 239 00aa 03F10403 		add	r3, r3, #4
- 240 00ae B968     		ldr	r1, [r7, #8]
- 241 00b0 CB18     		adds	r3, r1, r3
- 242 00b2 1968     		ldr	r1, [r3, #0]
- 243 00b4 3B68     		ldr	r3, [r7, #0]
- 244 00b6 03F10403 		add	r3, r3, #4
- 245 00ba 1B68     		ldr	r3, [r3, #0]
- 246 00bc CB1A     		subs	r3, r1, r3
- 247 00be 796A     		ldr	r1, [r7, #36]
- 248 00c0 4FEAC101 		lsl	r1, r1, #3
- 249 00c4 01F10401 		add	r1, r1, #4
- 250 00c8 B868     		ldr	r0, [r7, #8]
- 251 00ca 4118     		adds	r1, r0, r1
- 252 00cc 0868     		ldr	r0, [r1, #0]
- 253 00ce 3968     		ldr	r1, [r7, #0]
- 254 00d0 01F10401 		add	r1, r1, #4
- 255 00d4 0968     		ldr	r1, [r1, #0]
- 256 00d6 411A     		subs	r1, r0, r1
- 257 00d8 01FB03F3 		mul	r3, r1, r3
- 258 00dc D118     		adds	r1, r2, r3
+ 232              		.loc 1 42 0 discriminator 2
+ 233 00a4 7B6A     		ldr	r3, [r7, #36]
+ 234 00a6 4FEAC303 		lsl	r3, r3, #3
+ 235 00aa 03F10403 		add	r3, r3, #4
+ 236 00ae B968     		ldr	r1, [r7, #8]
+ 237 00b0 CB18     		adds	r3, r1, r3
+ 238 00b2 1968     		ldr	r1, [r3, #0]
+ 239 00b4 3B68     		ldr	r3, [r7, #0]
+ 240 00b6 03F10403 		add	r3, r3, #4
+ 241 00ba 1B68     		ldr	r3, [r3, #0]
+ 242 00bc CB1A     		subs	r3, r1, r3
+ 243 00be 796A     		ldr	r1, [r7, #36]
+ 244 00c0 4FEAC101 		lsl	r1, r1, #3
+ 245 00c4 01F10401 		add	r1, r1, #4
+ 246 00c8 B868     		ldr	r0, [r7, #8]
+ 247 00ca 4118     		adds	r1, r0, r1
+ 248 00cc 0868     		ldr	r0, [r1, #0]
+ 249 00ce 3968     		ldr	r1, [r7, #0]
+ 250 00d0 01F10401 		add	r1, r1, #4
+ 251 00d4 0968     		ldr	r1, [r1, #0]
+ 252 00d6 411A     		subs	r1, r0, r1
+ 253 00d8 01FB03F3 		mul	r3, r1, r3
+ 254 00dc D118     		adds	r1, r2, r3
   41:../src/main.c **** 		d[i] = (points[2*i]-sample[0]) * (points[2*i]-sample[0])
- 259              		.loc 1 41 0 discriminator 2
- 260 00de 3B69     		ldr	r3, [r7, #16]
- 261 00e0 7A6A     		ldr	r2, [r7, #36]
- 262 00e2 43F82210 		str	r1, [r3, r2, lsl #2]
+ 255              		.loc 1 41 0 discriminator 2
+ 256 00de 3B69     		ldr	r3, [r7, #16]
+ 257 00e0 7A6A     		ldr	r2, [r7, #36]
+ 258 00e2 43F82210 		str	r1, [r3, r2, lsl #2]
   40:../src/main.c **** 	for (i=0; i<N; i++){
- 263              		.loc 1 40 0 discriminator 2
- 264 00e6 7B6A     		ldr	r3, [r7, #36]
- 265 00e8 03F10103 		add	r3, r3, #1
- 266 00ec 7B62     		str	r3, [r7, #36]
- 267              	.L4:
+ 259              		.loc 1 40 0 discriminator 2
+ 260 00e6 7B6A     		ldr	r3, [r7, #36]
+ 261 00e8 03F10103 		add	r3, r3, #1
+ 262 00ec 7B62     		str	r3, [r7, #36]
+ 263              	.L4:
   40:../src/main.c **** 	for (i=0; i<N; i++){
- 268              		.loc 1 40 0 is_stmt 0 discriminator 1
- 269 00ee 7A6A     		ldr	r2, [r7, #36]
- 270 00f0 FB68     		ldr	r3, [r7, #12]
- 271 00f2 9A42     		cmp	r2, r3
- 272 00f4 C2DB     		blt	.L5
+ 264              		.loc 1 40 0 is_stmt 0 discriminator 1
+ 265 00ee 7A6A     		ldr	r2, [r7, #36]
+ 266 00f0 FB68     		ldr	r3, [r7, #12]
+ 267 00f2 9A42     		cmp	r2, r3
+ 268 00f4 C2DB     		blt	.L5
   43:../src/main.c **** 	}
   44:../src/main.c **** 
   45:../src/main.c **** 	// print all distances
-  46:../src/main.c **** 	for (i=0; i<N; i++){
- 273              		.loc 1 46 0 is_stmt 1
- 274 00f6 4FF00003 		mov	r3, #0
- 275 00fa 7B62     		str	r3, [r7, #36]
- 276 00fc 18E0     		b	.L6
- 277              	.L7:
-  47:../src/main.c **** 		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
- 278              		.loc 1 47 0 discriminator 2
- 279 00fe 40F20003 		movw	r3, #:lower16:.LC5
- 280 0102 C0F20003 		movt	r3, #:upper16:.LC5
- 281 0106 7A6A     		ldr	r2, [r7, #36]
- 282 0108 02F10101 		add	r1, r2, #1
- 283 010c 3A69     		ldr	r2, [r7, #16]
- 284 010e 786A     		ldr	r0, [r7, #36]
- 285 0110 52F82020 		ldr	r2, [r2, r0, lsl #2]
- 286 0114 786A     		ldr	r0, [r7, #36]
- 287 0116 4FEA8000 		lsl	r0, r0, #2
- 288 011a 7C68     		ldr	r4, [r7, #4]
- 289 011c 2018     		adds	r0, r4, r0
- 290 011e 0468     		ldr	r4, [r0, #0]
- 291 0120 1846     		mov	r0, r3
- 292 0122 2346     		mov	r3, r4
- 293 0124 FFF7FEFF 		bl	printf
-  46:../src/main.c **** 	for (i=0; i<N; i++){
- 294              		.loc 1 46 0 discriminator 2
- 295 0128 7B6A     		ldr	r3, [r7, #36]
- 296 012a 03F10103 		add	r3, r3, #1
- 297 012e 7B62     		str	r3, [r7, #36]
- 298              	.L6:
-  46:../src/main.c **** 	for (i=0; i<N; i++){
- 299              		.loc 1 46 0 is_stmt 0 discriminator 1
- 300 0130 7A6A     		ldr	r2, [r7, #36]
- 301 0132 FB68     		ldr	r3, [r7, #12]
- 302 0134 9A42     		cmp	r2, r3
- 303 0136 E2DB     		blt	.L7
-  48:../src/main.c **** 	}
+  46:../src/main.c **** //	for (i=0; i<N; i++){
+  47:../src/main.c **** //		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
+  48:../src/main.c **** //	}
   49:../src/main.c **** 
   50:../src/main.c **** 	// find the k=1 nearest neighbors
   51:../src/main.c **** 
   52:../src/main.c **** 	d1 = d[0];
- 304              		.loc 1 52 0 is_stmt 1
- 305 0138 3B69     		ldr	r3, [r7, #16]
- 306 013a 1B68     		ldr	r3, [r3, #0]
- 307 013c BB61     		str	r3, [r7, #24]
+ 269              		.loc 1 52 0 is_stmt 1
+ 270 00f6 3B69     		ldr	r3, [r7, #16]
+ 271 00f8 1B68     		ldr	r3, [r3, #0]
+ 272 00fa BB61     		str	r3, [r7, #24]
   53:../src/main.c **** 	class = label[0];
- 308              		.loc 1 53 0
- 309 013e 7B68     		ldr	r3, [r7, #4]
- 310 0140 1B68     		ldr	r3, [r3, #0]
- 311 0142 FB61     		str	r3, [r7, #28]
+ 273              		.loc 1 53 0
+ 274 00fc 7B68     		ldr	r3, [r7, #4]
+ 275 00fe 1B68     		ldr	r3, [r3, #0]
+ 276 0100 FB61     		str	r3, [r7, #28]
   54:../src/main.c **** 	for (j=0; j<N; j++){
- 312              		.loc 1 54 0
- 313 0144 4FF00003 		mov	r3, #0
- 314 0148 3B62     		str	r3, [r7, #32]
- 315 014a 16E0     		b	.L8
- 316              	.L10:
+ 277              		.loc 1 54 0
+ 278 0102 4FF00003 		mov	r3, #0
+ 279 0106 3B62     		str	r3, [r7, #32]
+ 280 0108 16E0     		b	.L6
+ 281              	.L8:
   55:../src/main.c **** 		if (d[j]<d1){
- 317              		.loc 1 55 0
- 318 014c 3B69     		ldr	r3, [r7, #16]
- 319 014e 3A6A     		ldr	r2, [r7, #32]
- 320 0150 53F82220 		ldr	r2, [r3, r2, lsl #2]
- 321 0154 BB69     		ldr	r3, [r7, #24]
- 322 0156 9A42     		cmp	r2, r3
- 323 0158 0BDA     		bge	.L9
+ 282              		.loc 1 55 0
+ 283 010a 3B69     		ldr	r3, [r7, #16]
+ 284 010c 3A6A     		ldr	r2, [r7, #32]
+ 285 010e 53F82220 		ldr	r2, [r3, r2, lsl #2]
+ 286 0112 BB69     		ldr	r3, [r7, #24]
+ 287 0114 9A42     		cmp	r2, r3
+ 288 0116 0BDA     		bge	.L7
   56:../src/main.c **** 			class = label[j];
- 324              		.loc 1 56 0
- 325 015a 3B6A     		ldr	r3, [r7, #32]
- 326 015c 4FEA8303 		lsl	r3, r3, #2
- 327 0160 7A68     		ldr	r2, [r7, #4]
- 328 0162 D318     		adds	r3, r2, r3
- 329 0164 1B68     		ldr	r3, [r3, #0]
- 330 0166 FB61     		str	r3, [r7, #28]
+ 289              		.loc 1 56 0
+ 290 0118 3B6A     		ldr	r3, [r7, #32]
+ 291 011a 4FEA8303 		lsl	r3, r3, #2
+ 292 011e 7A68     		ldr	r2, [r7, #4]
+ 293 0120 D318     		adds	r3, r2, r3
+ 294 0122 1B68     		ldr	r3, [r3, #0]
+ 295 0124 FB61     		str	r3, [r7, #28]
   57:../src/main.c **** 			d1 = d[j];
- 331              		.loc 1 57 0
- 332 0168 3B69     		ldr	r3, [r7, #16]
- 333 016a 3A6A     		ldr	r2, [r7, #32]
- 334 016c 53F82230 		ldr	r3, [r3, r2, lsl #2]
- 335 0170 BB61     		str	r3, [r7, #24]
- 336              	.L9:
+ 296              		.loc 1 57 0
+ 297 0126 3B69     		ldr	r3, [r7, #16]
+ 298 0128 3A6A     		ldr	r2, [r7, #32]
+ 299 012a 53F82230 		ldr	r3, [r3, r2, lsl #2]
+ 300 012e BB61     		str	r3, [r7, #24]
+ 301              	.L7:
   54:../src/main.c **** 	for (j=0; j<N; j++){
- 337              		.loc 1 54 0
- 338 0172 3B6A     		ldr	r3, [r7, #32]
- 339 0174 03F10103 		add	r3, r3, #1
- 340 0178 3B62     		str	r3, [r7, #32]
- 341              	.L8:
+ 302              		.loc 1 54 0
+ 303 0130 3B6A     		ldr	r3, [r7, #32]
+ 304 0132 03F10103 		add	r3, r3, #1
+ 305 0136 3B62     		str	r3, [r7, #32]
+ 306              	.L6:
   54:../src/main.c **** 	for (j=0; j<N; j++){
- 342              		.loc 1 54 0 is_stmt 0 discriminator 1
- 343 017a 3A6A     		ldr	r2, [r7, #32]
- 344 017c FB68     		ldr	r3, [r7, #12]
- 345 017e 9A42     		cmp	r2, r3
- 346 0180 E4DB     		blt	.L10
+ 307              		.loc 1 54 0 is_stmt 0 discriminator 1
+ 308 0138 3A6A     		ldr	r2, [r7, #32]
+ 309 013a FB68     		ldr	r3, [r7, #12]
+ 310 013c 9A42     		cmp	r2, r3
+ 311 013e E4DB     		blt	.L8
   58:../src/main.c **** 		}
   59:../src/main.c **** 	}
   60:../src/main.c **** 	
   61:../src/main.c **** 	return class;
- 347              		.loc 1 61 0 is_stmt 1
- 348 0182 FB69     		ldr	r3, [r7, #28]
- 349 0184 B546     		mov	sp, r6
+ 312              		.loc 1 61 0 is_stmt 1
+ 313 0140 FB69     		ldr	r3, [r7, #28]
+ 314 0142 B546     		mov	sp, r6
   62:../src/main.c **** }
- 350              		.loc 1 62 0
- 351 0186 1846     		mov	r0, r3
- 352 0188 07F12C07 		add	r7, r7, #44
- 353 018c BD46     		mov	sp, r7
- 354 018e BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
- 355              		.cfi_endproc
- 356              	.LFE1:
- 358 0192 00BF     		.text
- 359              	.Letext0:
+ 315              		.loc 1 62 0
+ 316 0144 1846     		mov	r0, r3
+ 317 0146 07F12807 		add	r7, r7, #40
+ 318 014a BD46     		mov	sp, r7
+ 319 014c BDE8F003 		pop	{r4, r5, r6, r7, r8, r9}
+ 320 0150 7047     		bx	lr
+ 321              		.cfi_endproc
+ 322              	.LFE1:
+ 324 0152 00BF     		.text
+ 325              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:19     .rodata:00000000 $d
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:20     .rodata:00000000 .LC3
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:23     .rodata:00000014 .LC4
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:26     .rodata:00000028 .LC0
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:44     .rodata:00000068 .LC1
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:54     .rodata:00000088 .LC2
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:58     .text.main:00000000 $t
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:63     .text.main:00000000 main
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:154    .text.classification_c:00000000 classification_c
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:146    .rodata:00000090 .LC5
-C:\Users\ngnig\AppData\Local\Temp\ccJYtpif.s:149    .text.classification_c:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:19     .rodata:00000000 $d
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:20     .rodata:00000000 .LC3
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:23     .rodata:00000014 .LC4
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:26     .rodata:00000028 .LC0
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:44     .rodata:00000068 .LC1
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:54     .rodata:00000088 .LC2
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:58     .text.main:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:63     .text.main:00000000 main
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:150    .text.classification_c:00000000 classification_c
+C:\Users\ngnig\AppData\Local\Temp\ccUdUNIp.s:145    .text.classification_c:00000000 $t
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
