@@ -1,35 +1,37 @@
 /*
  * GENERATED FILE - DO NOT EDIT
- * (c) Code Red Technologies Ltd, 2008-2013
+ * (c) Code Red Technologies Ltd, 2008-2021
  * (c) NXP Semiconductors 2013-2021
  * Generated linker script file for LPC1769
- * Created from linkscript.ldt by FMCreateLinkLibraries
- * Using Freemarker v2.3.23
- * LPCXpresso v8.2.2 [Build 650] [2016-09-09]  on 18 Oct, 2021 6:22:33 PM
+ * Created from generic_c.ld (LPCXpresso v6.1 (4 [Build 194] [2014-01-15] ))
+ * By LPCXpresso v6.1.4 [Build 194] [2014-01-15]  on Sun Nov 07 18:24:59 SGT 2021
  */
 
-INCLUDE "CG2028AssignS1AY2122_Debug_library.ld"
-INCLUDE "CG2028AssignS1AY2122_Debug_memory.ld"
+
+INCLUDE "CG2028AssignS1AY2122_Debug_lib.ld"
+INCLUDE "CG2028AssignS1AY2122_Debug_mem.ld"
 
 ENTRY(ResetISR)
 
 SECTIONS
 {
-    /* MAIN TEXT SECTION */
+
+    /* MAIN TEXT SECTION */    
     .text : ALIGN(4)
     {
         FILL(0xff)
         __vectors_start__ = ABSOLUTE(.) ;
         KEEP(*(.isr_vector))
+        
         /* Global Section Table */
-        . = ALIGN(4) ; 
+        . = ALIGN(4) ;
         __section_table_start = .;
         __data_section_table = .;
         LONG(LOADADDR(.data));
-        LONG(    ADDR(.data));
+        LONG(    ADDR(.data)) ;
         LONG(  SIZEOF(.data));
         LONG(LOADADDR(.data_RAM2));
-        LONG(    ADDR(.data_RAM2));
+        LONG(    ADDR(.data_RAM2)) ;
         LONG(  SIZEOF(.data_RAM2));
         __data_section_table_end = .;
         __bss_section_table = .;
@@ -39,76 +41,79 @@ SECTIONS
         LONG(  SIZEOF(.bss_RAM2));
         __bss_section_table_end = .;
         __section_table_end = . ;
-	    /* End of Global Section Table */
+        /* End of Global Section Table */
+        
 
         *(.after_vectors*)
-
+        
     } >MFlash512
-
+    
     .text : ALIGN(4)    
     {
-        *(.text*)
+         *(.text*)
         *(.rodata .rodata.* .constdata .constdata.*)
         . = ALIGN(4);
+        
     } > MFlash512
+
     /*
      * for exception handling/unwind - some Newlib functions (in common
      * with C++ and STDC++) use this. 
      */
-    .ARM.extab : ALIGN(4) 
+    .ARM.extab : ALIGN(4)
     {
-        *(.ARM.extab* .gnu.linkonce.armextab.*)
+    	*(.ARM.extab* .gnu.linkonce.armextab.*)
     } > MFlash512
     __exidx_start = .;
-
+    
     .ARM.exidx : ALIGN(4)
     {
-        *(.ARM.exidx* .gnu.linkonce.armexidx.*)
+    	*(.ARM.exidx* .gnu.linkonce.armexidx.*)
     } > MFlash512
     __exidx_end = .;
-
+    
     _etext = .;
         
+    
     /* DATA section for RamAHB32 */
     .data_RAM2 : ALIGN(4)
     {
-        FILL(0xff)
-        PROVIDE(__start_data_RAM2 = .) ;
-        *(.ramfunc.$RAM2)
-        *(.ramfunc.$RamAHB32)
-        *(.data.$RAM2*)
-        *(.data.$RamAHB32*)
-        . = ALIGN(4) ;
-        PROVIDE(__end_data_RAM2 = .) ;
-     } > RamAHB32 AT>MFlash512
-
+       FILL(0xff)
+    	*(.data.$RAM2*)
+    	*(.data.$RamAHB32*)
+       . = ALIGN(4) ;
+    } > RamAHB32 AT>MFlash512
+    
     /* MAIN DATA SECTION */
+    
+
     .uninit_RESERVED : ALIGN(4)
     {
         KEEP(*(.bss.$RESERVED*))
         . = ALIGN(4) ;
         _end_uninit_RESERVED = .;
     } > RamLoc32
-    /* Main DATA section (RamLoc32) */
-    .data : ALIGN(4)
-    {
-       FILL(0xff)
-       _data = . ;
-       *(vtable)
-       *(.ramfunc*)
-       *(.data*)
-       . = ALIGN(4) ;
-       _edata = . ;
-    } > RamLoc32 AT>MFlash512
+
+	
+	/* Main DATA section (RamLoc32) */
+	.data : ALIGN(4)
+	{
+	   FILL(0xff)
+	   _data = . ;
+	   *(vtable)
+	   *(.data*)
+	   . = ALIGN(4) ;
+	   _edata = . ;
+	} > RamLoc32 AT>MFlash512
+
     /* BSS section for RamAHB32 */
     .bss_RAM2 : ALIGN(4)
     {
-       PROVIDE(__start_bss_RAM2 = .) ;
-       *(.bss.$RAM2*)
-       *(.bss.$RamAHB32*)
-       . = ALIGN (. != 0 ? 4 : 1) ; /* avoid empty segment */
-       PROVIDE(__end_bss_RAM2 = .) ;
-    } > RamAHB32 
+    	*(.bss.$RAM2*)
+    	*(.bss.$RamAHB32*)
+       . = ALIGN(4) ;
+    } > RamAHB32
+
     /* MAIN BSS SECTION */
     .bss : ALIGN(4)
     {
@@ -119,13 +124,15 @@ SECTIONS
         _ebss = .;
         PROVIDE(end = .);
     } > RamLoc32
+        
     /* NOINIT section for RamAHB32 */
     .noinit_RAM2 (NOLOAD) : ALIGN(4)
     {
-       *(.noinit.$RAM2*)
-       *(.noinit.$RamAHB32*)
+    	*(.noinit.$RAM2*)
+    	*(.noinit.$RamAHB32*)
        . = ALIGN(4) ;
     } > RamAHB32 
+    
     /* DEFAULT NOINIT SECTION */
     .noinit (NOLOAD): ALIGN(4)
     {
@@ -134,18 +141,7 @@ SECTIONS
          . = ALIGN(4) ;
         _end_noinit = .;
     } > RamLoc32
-
-    PROVIDE(_pvHeapStart = DEFINED(__user_heap_base) ? __user_heap_base : .);
-    PROVIDE(_vStackTop = DEFINED(__user_stack_top) ? __user_stack_top : __top_RamLoc32 - 0);
-
-    /* ## Create checksum value (used in startup) ## */
-    PROVIDE(__valid_user_code_checksum = 0 - 
-                                         (_vStackTop 
-                                         + (ResetISR + 1) 
-                                         + (NMI_Handler + 1) 
-                                         + (HardFault_Handler + 1) 
-                                         + (( DEFINED(MemManage_Handler) ? MemManage_Handler : 0 ) + 1)   /* MemManage_Handler may not be defined */
-                                         + (( DEFINED(BusFault_Handler) ? BusFault_Handler : 0 ) + 1)     /* BusFault_Handler may not be defined */
-                                         + (( DEFINED(UsageFault_Handler) ? UsageFault_Handler : 0 ) + 1) /* UsageFault_Handler may not be defined */
-                                         ) );
+    
+    PROVIDE(_pvHeapStart = .);
+    PROVIDE(_vStackTop = __top_RamLoc32 - 0);
 }

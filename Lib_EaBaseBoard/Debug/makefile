@@ -36,7 +36,7 @@ libLib_EaBaseBoard.a: $(OBJS) $(USER_OBJS)
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(ARCHIVES)$(C_DEPS) libLib_EaBaseBoard.a
+	-$(RM) $(OBJS)$(C_DEPS)$(ARCHIVES) libLib_EaBaseBoard.a
 	-@echo ' '
 
 post-build:
