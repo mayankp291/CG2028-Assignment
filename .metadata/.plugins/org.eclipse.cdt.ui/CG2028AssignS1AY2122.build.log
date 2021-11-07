@@ -1,4 +1,4 @@
-18:06:44 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+18:10:15 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
 make all 
 Building file: ../src/classification.s
 Invoking: MCU Assembler
@@ -17,5 +17,5 @@ arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2
   12424	      0	    376	  12800	   3200	CG2028AssignS1AY2122.axf
  
 
-18:06:44 Build Finished (took 517ms)
+18:10:15 Build Finished (took 556ms)
 

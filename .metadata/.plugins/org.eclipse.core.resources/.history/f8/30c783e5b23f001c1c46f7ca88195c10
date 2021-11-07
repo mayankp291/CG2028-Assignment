@@ -38,7 +38,7 @@ STR R7, [R6]
 
 @ initialise min_distance to max
 LDR R6, =min_distance
-MOV R7, #0x0FFFFFFF
+MOV R7, #0xFFFFFFFF
 STR R7, [R6]
 
 @ extract N into register 8 for comparison later.

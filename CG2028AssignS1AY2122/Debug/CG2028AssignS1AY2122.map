@@ -394,96 +394,95 @@ END GROUP
                 0x000000f4                __section_table_end = .
  *(.after_vectors*)
  *(.text*)
- .text          0x000000f4       0xb0 ./src/classification.o
+ .text          0x000000f4       0xb4 ./src/classification.o
                 0x000000f4                classification
  .text.ResetISR
-                0x000001a4       0x68 ./src/cr_startup_lpc17.o
-                0x000001a4                ResetISR
+                0x000001a8       0x68 ./src/cr_startup_lpc17.o
+                0x000001a8                ResetISR
  .text.NMI_Handler
-                0x0000020c        0x8 ./src/cr_startup_lpc17.o
-                0x0000020c                NMI_Handler
+                0x00000210        0x8 ./src/cr_startup_lpc17.o
+                0x00000210                NMI_Handler
  .text.HardFault_Handler
-                0x00000214        0x8 ./src/cr_startup_lpc17.o
-                0x00000214                HardFault_Handler
+                0x00000218        0x8 ./src/cr_startup_lpc17.o
+                0x00000218                HardFault_Handler
  .text.MemManage_Handler
-                0x0000021c        0x8 ./src/cr_startup_lpc17.o
-                0x0000021c                MemManage_Handler
+                0x00000220        0x8 ./src/cr_startup_lpc17.o
+                0x00000220                MemManage_Handler
  .text.BusFault_Handler
-                0x00000224        0x8 ./src/cr_startup_lpc17.o
-                0x00000224                BusFault_Handler
+                0x00000228        0x8 ./src/cr_startup_lpc17.o
+                0x00000228                BusFault_Handler
  .text.UsageFault_Handler
-                0x0000022c        0x8 ./src/cr_startup_lpc17.o
-                0x0000022c                UsageFault_Handler
+                0x00000230        0x8 ./src/cr_startup_lpc17.o
+                0x00000230                UsageFault_Handler
  .text.SVCall_Handler
-                0x00000234        0x8 ./src/cr_startup_lpc17.o
-                0x00000234                SVCall_Handler
+                0x00000238        0x8 ./src/cr_startup_lpc17.o
+                0x00000238                SVCall_Handler
  .text.DebugMon_Handler
-                0x0000023c        0x8 ./src/cr_startup_lpc17.o
-                0x0000023c                DebugMon_Handler
+                0x00000240        0x8 ./src/cr_startup_lpc17.o
+                0x00000240                DebugMon_Handler
  .text.PendSV_Handler
-                0x00000244        0x8 ./src/cr_startup_lpc17.o
-                0x00000244                PendSV_Handler
+                0x00000248        0x8 ./src/cr_startup_lpc17.o
+                0x00000248                PendSV_Handler
  .text.SysTick_Handler
-                0x0000024c        0x8 ./src/cr_startup_lpc17.o
-                0x0000024c                SysTick_Handler
+                0x00000250        0x8 ./src/cr_startup_lpc17.o
+                0x00000250                SysTick_Handler
  .text.IntDefaultHandler
-                0x00000254        0x8 ./src/cr_startup_lpc17.o
-                0x00000254                TIMER2_IRQHandler
-                0x00000254                RIT_IRQHandler
-                0x00000254                I2C0_IRQHandler
-                0x00000254                USBActivity_IRQHandler
-                0x00000254                PWM1_IRQHandler
-                0x00000254                I2C1_IRQHandler
-                0x00000254                EINT2_IRQHandler
-                0x00000254                UART1_IRQHandler
-                0x00000254                EINT3_IRQHandler
-                0x00000254                CANActivity_IRQHandler
-                0x00000254                TIMER3_IRQHandler
-                0x00000254                UART0_IRQHandler
-                0x00000254                IntDefaultHandler
-                0x00000254                PLL0_IRQHandler
-                0x00000254                CAN_IRQHandler
-                0x00000254                PLL1_IRQHandler
-                0x00000254                SSP0_IRQHandler
-                0x00000254                I2S_IRQHandler
-                0x00000254                I2C2_IRQHandler
-                0x00000254                RTC_IRQHandler
-                0x00000254                TIMER0_IRQHandler
-                0x00000254                SPI_IRQHandler
-                0x00000254                EINT1_IRQHandler
-                0x00000254                TIMER1_IRQHandler
-                0x00000254                UART2_IRQHandler
-                0x00000254                ADC_IRQHandler
-                0x00000254                SSP1_IRQHandler
-                0x00000254                USB_IRQHandler
-                0x00000254                BOD_IRQHandler
-                0x00000254                WDT_IRQHandler
-                0x00000254                QEI_IRQHandler
-                0x00000254                EINT0_IRQHandler
-                0x00000254                DMA_IRQHandler
-                0x00000254                UART3_IRQHandler
-                0x00000254                MCPWM_IRQHandler
-                0x00000254                ENET_IRQHandler
- .text.main     0x0000025c       0xa8 ./src/main.o
-                0x0000025c                main
+                0x00000258        0x8 ./src/cr_startup_lpc17.o
+                0x00000258                TIMER2_IRQHandler
+                0x00000258                RIT_IRQHandler
+                0x00000258                I2C0_IRQHandler
+                0x00000258                USBActivity_IRQHandler
+                0x00000258                PWM1_IRQHandler
+                0x00000258                I2C1_IRQHandler
+                0x00000258                EINT2_IRQHandler
+                0x00000258                UART1_IRQHandler
+                0x00000258                EINT3_IRQHandler
+                0x00000258                CANActivity_IRQHandler
+                0x00000258                TIMER3_IRQHandler
+                0x00000258                UART0_IRQHandler
+                0x00000258                IntDefaultHandler
+                0x00000258                PLL0_IRQHandler
+                0x00000258                CAN_IRQHandler
+                0x00000258                PLL1_IRQHandler
+                0x00000258                SSP0_IRQHandler
+                0x00000258                I2S_IRQHandler
+                0x00000258                I2C2_IRQHandler
+                0x00000258                RTC_IRQHandler
+                0x00000258                TIMER0_IRQHandler
+                0x00000258                SPI_IRQHandler
+                0x00000258                EINT1_IRQHandler
+                0x00000258                TIMER1_IRQHandler
+                0x00000258                UART2_IRQHandler
+                0x00000258                ADC_IRQHandler
+                0x00000258                SSP1_IRQHandler
+                0x00000258                USB_IRQHandler
+                0x00000258                BOD_IRQHandler
+                0x00000258                WDT_IRQHandler
+                0x00000258                QEI_IRQHandler
+                0x00000258                EINT0_IRQHandler
+                0x00000258                DMA_IRQHandler
+                0x00000258                UART3_IRQHandler
+                0x00000258                MCPWM_IRQHandler
+                0x00000258                ENET_IRQHandler
+ .text.main     0x00000260       0xa8 ./src/main.o
+                0x00000260                main
  .text.classification_c
-                0x00000304      0x154 ./src/main.o
-                0x00000304                classification_c
+                0x00000308      0x154 ./src/main.o
+                0x00000308                classification_c
  .text.SystemInit
-                0x00000458      0x22c C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug\libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
-                0x00000458                SystemInit
- .text.__main   0x00000684       0x14 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr__main.o)
-                0x00000684                __CR_SEMIHOST
-                0x00000684                __main
+                0x0000045c      0x22c C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug\libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
+                0x0000045c                SystemInit
+ .text.__main   0x00000688       0x14 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr__main.o)
+                0x00000688                __CR_SEMIHOST
+                0x00000688                __main
  .text.lose_trailing_zeros
-                0x00000698       0x1e c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
+                0x0000069c       0x1e c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
  .text.fp_round
-                0x000006b6       0x54 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
+                0x000006ba       0x54 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
  .text.pr_dec.constprop.1
-                0x0000070a       0x22 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
- .text.sprintf  0x0000072c       0x70 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
-                0x0000072c                sprintf
- *fill*         0x0000079c        0x4 00
+                0x0000070e       0x22 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
+ .text.sprintf  0x00000730       0x70 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
+                0x00000730                sprintf
  .text.fp_display
                 0x000007a0      0x908 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_c.a(fpprintf.o)
  .text.vsnprintf
@@ -835,11 +834,11 @@ OUTPUT(CG2028AssignS1AY2122.axf elf32-littlearm)
  .comment       0x00000000       0x71 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr_sbrk.o)
  .comment       0x00000000       0x71 c:/nxp/lpcxpresso_6.1.4_194/lpcxpresso/tools/bin/../lib/gcc/arm-none-eabi/4.6.2/../../../../arm-none-eabi/lib/armv7-m\libcr_semihost.a(_cr_check_heap.o)
 
-.debug_line     0x00000000      0xbc1
- .debug_line    0x00000000       0x7e ./src/classification.o
- .debug_line    0x0000007e      0x452 ./src/cr_startup_lpc17.o
- .debug_line    0x000004d0      0x2ee ./src/main.o
- .debug_line    0x000007be      0x403 C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug\libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
+.debug_line     0x00000000      0xbc3
+ .debug_line    0x00000000       0x80 ./src/classification.o
+ .debug_line    0x00000080      0x452 ./src/cr_startup_lpc17.o
+ .debug_line    0x000004d2      0x2ee ./src/main.o
+ .debug_line    0x000007c0      0x403 C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug\libCMSISv1p30_LPC17xx.a(system_LPC17xx.o)
 
 .debug_info     0x00000000      0x77c
  .debug_info    0x00000000       0x84 ./src/classification.o
