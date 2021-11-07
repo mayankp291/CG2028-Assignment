@@ -87,8 +87,6 @@ GET_EUCLIDEAN:
 	LDR R6, =point_y
 	STR R9, [R6]
 
-@ get label
-	LDR R10, [R2], #4	@get value of label. either 0 or 1 and increment accordingly
 @ calculate euclidean distance
 
 @load x, y
@@ -125,33 +123,30 @@ GET_EUCLIDEAN:
 	LDR R5, [R6]	@loads value of min distance into R5
 
 	CMP R4, R5	@compare current and min distance
-	BLE SET_NEW_DISTANCE_AND_UPDATE_LABEL	@if current distance is <= min_distance, set new distance
-	BX LR	@end comparison, return to main
+	BLE SET_NEW_DISTANCE	@if current distance is <= min_distance, set new distance
 
+
+@ at this stage curr_distance is known
+
+	BX LR
 @sets R0 to the class
 RETURN_VALUE:
-		LDR R7,=curr_class	@gets current class reading (most updated)
+		LDR R7,=min_distance	@gets current class reading (most updated)
 		LDR R0, [R7]
 		@MOV R0, R4
 		BX LR
 
 @sets new minimum distance and updates label
 @at this stage, [R4] <= [R5]
-SET_NEW_DISTANCE_AND_UPDATE_LABEL:
+SET_NEW_DISTANCE:
 	LDR R6, =min_distance	@get address of min distance
 	STR R4, [R6]	@overwrite minimum distance with current distance
-	@now, to set the label too!
-	LDR R7, =curr_class	@get address of current class
-	STR R10, [R7]	@stores current label to latest class
+
 
 	BX LR
 
 @label: .word value
 
-
-@@@				@@@
-@	VARIABLES	  @
-@@@				@@@
 
 @.lcomm label num_bytes - these values are important and thus are stored as static variables
 .lcomm sample_x 4	@x coordinate of a particular sample (not modified in calculations)
@@ -159,6 +154,7 @@ SET_NEW_DISTANCE_AND_UPDATE_LABEL:
 
 .lcomm point_x 4	@x coordinate of a reference point (to be modifed (N - 1) times)
 .lcomm point_y 4	@y coordinate of a reference point (to be modified (N - 1) times)
+.lcomm curr_label 1 @current label of the point of refernece
 
 .lcomm x_s 4 @x squared
 .lcomm y_s 4 @y squared

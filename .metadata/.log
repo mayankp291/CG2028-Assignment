@@ -628,3 +628,15 @@ java.io.FileNotFoundException: C:\Users\ngnig\Desktop\CG2028_Assignment\CG2028As
 
 !ENTRY com.crt.log 1 0 2021-11-07 18:01:22.917
 !MESSAGE Drivers loaded in 1803 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-07 18:24:46.712
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:24:46.712
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:24:46.712
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:24:46.712
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-07 18:25:06.292
+!MESSAGE Drivers loaded in 1854 milliseconds

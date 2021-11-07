@@ -125,9 +125,12 @@ GET_EUCLIDEAN:
 	LDR R5, [R6]	@loads value of min distance into R5
 
 	CMP R4, R5	@compare current and min distance
-	BLE SET_NEW_DISTANCE_AND_UPDATE_LABEL	@if current distance is <= min_distance, set new distance
-	BX LR	@end comparison, return to main
+	BLE SET_NEW_DISTANCE	@if current distance is <= min_distance, set new distance
 
+
+@ at this stage curr_distance is known
+
+	BX LR
 @sets R0 to the class
 RETURN_VALUE:
 		LDR R7,=curr_class	@gets current class reading (most updated)
@@ -137,7 +140,7 @@ RETURN_VALUE:
 
 @sets new minimum distance and updates label
 @at this stage, [R4] <= [R5]
-SET_NEW_DISTANCE_AND_UPDATE_LABEL:
+SET_NEW_DISTANCE:
 	LDR R6, =min_distance	@get address of min distance
 	STR R4, [R6]	@overwrite minimum distance with current distance
 	@now, to set the label too!
