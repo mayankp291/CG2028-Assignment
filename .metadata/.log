@@ -640,3 +640,51 @@ java.io.FileNotFoundException: C:\Users\ngnig\Desktop\CG2028_Assignment\CG2028As
 
 !ENTRY com.crt.log 1 0 2021-11-07 18:25:06.292
 !MESSAGE Drivers loaded in 1854 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-07 18:34:03.301
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:34:03.301
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:34:03.301
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-07 18:34:03.301
+!MESSAGE Not connected to emulator.
+!SESSION 2021-11-08 10:37:38.398 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_SG
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.osgi 2 1 2021-11-08 10:37:51.459
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsets in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2021-11-08 10:37:51.459
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsetsTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2021-11-08 10:37:51.459
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytes in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2021-11-08 10:37:51.459
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytesTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2021-11-08 10:37:51.459
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddress in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2021-11-08 10:37:51.459
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddressTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY com.crt.log 1 0 2021-11-08 10:47:11.575
+!MESSAGE Drivers loaded in 2020 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-08 10:55:15.600
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-08 10:55:15.600
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-08 10:55:15.600
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-08 10:55:15.600
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-08 10:55:36.094
+!MESSAGE Drivers loaded in 1854 milliseconds

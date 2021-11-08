@@ -5363,3 +5363,369 @@ make: Nothing to be done for `all'.
 18:25:00 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
 make all 
 make: Nothing to be done for `all'.
+10:43:09 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:43:11 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:43:13 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12440	      0	    372	  12812	   320c	CG2028AssignS1AY2122.axf
+ 
+10:43:17 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:45:31 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:45:33 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12448	      0	    372	  12820	   3214	CG2028AssignS1AY2122.axf
+ 
+10:45:35 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:45:37 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:46:09 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:46:10 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:46:11 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:46:13 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12448	      0	    372	  12820	   3214	CG2028AssignS1AY2122.axf
+ 
+10:46:15 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:46:17 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:46:18 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:46:20 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:47:04 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:47:06 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:47:23 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:47:25 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:52:13 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:52:14 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:52:15 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12448	      0	    372	  12820	   3214	CG2028AssignS1AY2122.axf
+ 
+10:52:18 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:52:28 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:52:30 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:54:03 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:54:03 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:54:05 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12416	      0	    372	  12788	   31f4	CG2028AssignS1AY2122.axf
+ 
+10:54:08 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:54:12 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:54:14 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:54:38 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:54:40 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12416	      0	    372	  12788	   31f4	CG2028AssignS1AY2122.axf
+ 
+10:54:49 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:54:51 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:55:01 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:55:03 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:55:04 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:55:06 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:55:07 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:55:09 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:55:23 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:55:24 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:55:26 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:55:28 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:55:30 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:55:32 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:56:08 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:56:09 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:56:11 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12424	      0	    372	  12796	   31fc	CG2028AssignS1AY2122.axf
+ 
+10:56:13 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:56:17 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:56:18 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:56:40 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:56:42 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12432	      0	    372	  12804	   3204	CG2028AssignS1AY2122.axf
+ 
+10:56:44 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:56:46 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:56:59 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:57:01 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:57:44 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:57:45 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:57:47 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12448	      0	    372	  12820	   3214	CG2028AssignS1AY2122.axf
+ 
+10:57:50 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:57:53 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:57:55 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:58:33 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:58:33 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:58:35 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+Building file: ../src/classification.s
+Invoking: MCU Assembler
+arm-none-eabi-gcc -c -x assembler-with-cpp -DDEBUG -D__CODE_RED -D__REDLIB__ -g3 -mcpu=cortex-m3 -mthumb -o"src/classification.o" "../src/classification.s"
+Finished building: ../src/classification.s
+ 
+Building target: CG2028AssignS1AY2122.axf
+Invoking: MCU Linker
+arm-none-eabi-gcc -nostdlib -L"C:\Users\ngnig\Desktop\CG2028_Assignment\Lib_CMSISv1p30_LPC17xx\Debug" -Xlinker --gc-sections -Xlinker -Map=CG2028AssignS1AY2122.map -mcpu=cortex-m3 -mthumb -T "CG2028AssignS1AY2122_Debug.ld" -o"CG2028AssignS1AY2122.axf"  ./src/classification.o ./src/cr_startup_lpc17.o ./src/main.o   -lCMSISv1p30_LPC17xx
+Finished building target: CG2028AssignS1AY2122.axf
+ 
+make --no-print-directory post-build
+Performing post-build steps
+arm-none-eabi-size CG2028AssignS1AY2122.axf; # arm-none-eabi-objcopy -O ihex CG2028AssignS1AY2122.axf CG2028AssignS1AY2122.hex ;
+   text	   data	    bss	    dec	    hex	filename
+  12448	      0	    372	  12820	   3214	CG2028AssignS1AY2122.axf
+ 
+10:58:38 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
+10:58:41 **** Incremental Build of configuration Debug for project Lib_CMSISv1p30_LPC17xx ****
+make all 
+make: Nothing to be done for `all'.
+10:58:43 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+make all 
+make: Nothing to be done for `all'.
