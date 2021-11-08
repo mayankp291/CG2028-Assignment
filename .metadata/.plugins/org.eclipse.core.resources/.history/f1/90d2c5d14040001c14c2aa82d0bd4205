@@ -16,7 +16,6 @@ int main(void)
 	// (decimal fixed point with 1 fractional decimal digits precision)
 	// which are scaled up to allow them to be used integers
 
-	//35, 0 -> 15,20
 	int points[16] = {35, 0, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
 	int label[8] = {1, 1, 0, 0, 1, 0, 1, 0};
 	int sample[2] = {15, 20};

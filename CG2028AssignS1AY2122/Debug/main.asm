@@ -32,8 +32,8 @@
   24      0A00
   25 0026 0000     		.align	2
   26              	.LC0:
-  27 0028 23000000 		.word	35
-  28 002c 00000000 		.word	0
+  27 0028 0F000000 		.word	15
+  28 002c 14000000 		.word	20
   29 0030 00000000 		.word	0
   30 0034 0F000000 		.word	15
   31 0038 0A000000 		.word	10
@@ -108,8 +108,9 @@
   16:../src/main.c **** 	// (decimal fixed point with 1 fractional decimal digits precision)
   17:../src/main.c **** 	// which are scaled up to allow them to be used integers
   18:../src/main.c **** 
-  19:../src/main.c **** 	int points[16] = {35, 0, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
-  86              		.loc 1 19 0
+  19:../src/main.c **** 	//35, 0 -> 15,20
+  20:../src/main.c **** 	int points[16] = {15, 20, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
+  86              		.loc 1 20 0
   87 000c 40F20003 		movw	r3, #:lower16:.LC0
   88 0010 C0F20003 		movt	r3, #:upper16:.LC0
   89 0014 07F12C04 		add	r4, r7, #44
@@ -122,8 +123,8 @@
   96 0024 0FC4     		stmia	r4!, {r0, r1, r2, r3}
   97 0026 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
   98 002a 84E80F00 		stmia	r4, {r0, r1, r2, r3}
-  20:../src/main.c **** 	int label[8] = {1, 1, 0, 0, 1, 0, 1, 0};
-  99              		.loc 1 20 0
+  21:../src/main.c **** 	int label[8] = {1, 1, 0, 0, 1, 0, 1, 0};
+  99              		.loc 1 21 0
  100 002e 40F20003 		movw	r3, #:lower16:.LC1
  101 0032 C0F20003 		movt	r3, #:upper16:.LC1
  102 0036 07F10C04 		add	r4, r7, #12
@@ -132,17 +133,17 @@
  105 003e 0FC4     		stmia	r4!, {r0, r1, r2, r3}
  106 0040 95E80F00 		ldmia	r5, {r0, r1, r2, r3}
  107 0044 84E80F00 		stmia	r4, {r0, r1, r2, r3}
-  21:../src/main.c **** 	int sample[2] = {15, 20};
- 108              		.loc 1 21 0
+  22:../src/main.c **** 	int sample[2] = {15, 20};
+ 108              		.loc 1 22 0
  109 0048 40F20003 		movw	r3, #:lower16:.LC2
  110 004c C0F20003 		movt	r3, #:upper16:.LC2
  111 0050 07F10402 		add	r2, r7, #4
  112 0054 93E80300 		ldmia	r3, {r0, r1}
  113 0058 82E80300 		stmia	r2, {r0, r1}
-  22:../src/main.c **** 
-  23:../src/main.c **** 	// Call assembly language function to perform classification
-  24:../src/main.c **** 	printf( "asm: class = %d \n", classification(N, points, label, sample) ) ;
- 114              		.loc 1 24 0
+  23:../src/main.c **** 
+  24:../src/main.c **** 	// Call assembly language function to perform classification
+  25:../src/main.c **** 	printf( "asm: class = %d \n", classification(N, points, label, sample) ) ;
+ 114              		.loc 1 25 0
  115 005c 40F20004 		movw	r4, #:lower16:.LC3
  116 0060 C0F20004 		movt	r4, #:upper16:.LC3
  117 0064 07F12C01 		add	r1, r7, #44
@@ -154,8 +155,8 @@
  123 0078 2046     		mov	r0, r4
  124 007a 1946     		mov	r1, r3
  125 007c FFF7FEFF 		bl	printf
-  25:../src/main.c **** 	printf( "C  : class = %d \n", classification_c(N, points, label, sample) ) ;
- 126              		.loc 1 25 0
+  26:../src/main.c **** 	printf( "C  : class = %d \n", classification_c(N, points, label, sample) ) ;
+ 126              		.loc 1 26 0
  127 0080 40F20004 		movw	r4, #:lower16:.LC4
  128 0084 C0F20004 		movt	r4, #:upper16:.LC4
  129 0088 07F12C01 		add	r1, r7, #44
@@ -168,9 +169,9 @@
  136 009e 1946     		mov	r1, r3
  137 00a0 FFF7FEFF 		bl	printf
  138              	.L2:
-  26:../src/main.c **** 
-  27:../src/main.c **** 	while (1); //halt
- 139              		.loc 1 27 0 discriminator 1
+  27:../src/main.c **** 
+  28:../src/main.c **** 	while (1); //halt
+ 139              		.loc 1 28 0 discriminator 1
  140 00a4 FEE7     		b	.L2
  141              		.cfi_endproc
  142              	.LFE0:
@@ -181,11 +182,11 @@
  148              		.thumb_func
  150              	classification_c:
  151              	.LFB1:
-  28:../src/main.c **** }
-  29:../src/main.c **** 
-  30:../src/main.c **** int classification_c(int N, int* points, int* label, int* sample)
-  31:../src/main.c **** { 	// The implementation below is meant only for verifying your results.
- 152              		.loc 1 31 0
+  29:../src/main.c **** }
+  30:../src/main.c **** 
+  31:../src/main.c **** int classification_c(int N, int* points, int* label, int* sample)
+  32:../src/main.c **** { 	// The implementation below is meant only for verifying your results.
+ 152              		.loc 1 32 0
  153              		.cfi_startproc
  154              		@ args = 0, pretend = 0, frame = 40
  155              		@ frame_needed = 1, uses_anonymous_args = 0
@@ -209,14 +210,14 @@
  173 000a B960     		str	r1, [r7, #8]
  174 000c 7A60     		str	r2, [r7, #4]
  175 000e 3B60     		str	r3, [r7, #0]
- 176              		.loc 1 31 0
+ 176              		.loc 1 32 0
  177 0010 6B46     		mov	r3, sp
  178 0012 1E46     		mov	r6, r3
-  32:../src/main.c **** 	
-  33:../src/main.c **** 	int i,j,n;
-  34:../src/main.c **** 	int class;// returned labels of k=1 nearest neighbors
-  35:../src/main.c **** 	int d[N]; // squared Euclidean distance
- 179              		.loc 1 35 0
+  33:../src/main.c **** 	
+  34:../src/main.c **** 	int i,j,n;
+  35:../src/main.c **** 	int class;// returned labels of k=1 nearest neighbors
+  36:../src/main.c **** 	int d[N]; // squared Euclidean distance
+ 179              		.loc 1 36 0
  180 0014 F868     		ldr	r0, [r7, #12]
  181 0016 00F1FF33 		add	r3, r0, #-1
  182 001a 7B61     		str	r3, [r7, #20]
@@ -246,18 +247,18 @@
  206 006a 4FEAD303 		lsr	r3, r3, #3
  207 006e 4FEAC303 		lsl	r3, r3, #3
  208 0072 3B61     		str	r3, [r7, #16]
-  36:../src/main.c **** 	int d1;
-  37:../src/main.c **** 
-  38:../src/main.c **** 	
-  39:../src/main.c **** 	// calculate the squared distance between test sample and each training data points
-  40:../src/main.c **** 	for (i=0; i<N; i++){
- 209              		.loc 1 40 0
+  37:../src/main.c **** 	int d1;
+  38:../src/main.c **** 
+  39:../src/main.c **** 	
+  40:../src/main.c **** 	// calculate the squared distance between test sample and each training data points
+  41:../src/main.c **** 	for (i=0; i<N; i++){
+ 209              		.loc 1 41 0
  210 0074 4FF00003 		mov	r3, #0
  211 0078 7B62     		str	r3, [r7, #36]
  212 007a 38E0     		b	.L4
  213              	.L5:
-  41:../src/main.c **** 		d[i] = (points[2*i]-sample[0]) * (points[2*i]-sample[0])
- 214              		.loc 1 41 0 discriminator 2
+  42:../src/main.c **** 		d[i] = (points[2*i]-sample[0]) * (points[2*i]-sample[0])
+ 214              		.loc 1 42 0 discriminator 2
  215 007c 7B6A     		ldr	r3, [r7, #36]
  216 007e 4FEAC303 		lsl	r3, r3, #3
  217 0082 BA68     		ldr	r2, [r7, #8]
@@ -275,8 +276,8 @@
  229 009c 1268     		ldr	r2, [r2, #0]
  230 009e 8A1A     		subs	r2, r1, r2
  231 00a0 02FB03F2 		mul	r2, r2, r3
-  42:../src/main.c **** 		+ (points[2*i+1]-sample[1])*(points[2*i+1]-sample[1]);
- 232              		.loc 1 42 0 discriminator 2
+  43:../src/main.c **** 		+ (points[2*i+1]-sample[1])*(points[2*i+1]-sample[1]);
+ 232              		.loc 1 43 0 discriminator 2
  233 00a4 7B6A     		ldr	r3, [r7, #36]
  234 00a6 4FEAC303 		lsl	r3, r3, #3
  235 00aa 03F10403 		add	r3, r3, #4
@@ -299,92 +300,92 @@
  252 00d6 411A     		subs	r1, r0, r1
  253 00d8 01FB03F3 		mul	r3, r1, r3
  254 00dc D118     		adds	r1, r2, r3
-  41:../src/main.c **** 		d[i] = (points[2*i]-sample[0]) * (points[2*i]-sample[0])
- 255              		.loc 1 41 0 discriminator 2
+  42:../src/main.c **** 		d[i] = (points[2*i]-sample[0]) * (points[2*i]-sample[0])
+ 255              		.loc 1 42 0 discriminator 2
  256 00de 3B69     		ldr	r3, [r7, #16]
  257 00e0 7A6A     		ldr	r2, [r7, #36]
  258 00e2 43F82210 		str	r1, [r3, r2, lsl #2]
-  40:../src/main.c **** 	for (i=0; i<N; i++){
- 259              		.loc 1 40 0 discriminator 2
+  41:../src/main.c **** 	for (i=0; i<N; i++){
+ 259              		.loc 1 41 0 discriminator 2
  260 00e6 7B6A     		ldr	r3, [r7, #36]
  261 00e8 03F10103 		add	r3, r3, #1
  262 00ec 7B62     		str	r3, [r7, #36]
  263              	.L4:
-  40:../src/main.c **** 	for (i=0; i<N; i++){
- 264              		.loc 1 40 0 is_stmt 0 discriminator 1
+  41:../src/main.c **** 	for (i=0; i<N; i++){
+ 264              		.loc 1 41 0 is_stmt 0 discriminator 1
  265 00ee 7A6A     		ldr	r2, [r7, #36]
  266 00f0 FB68     		ldr	r3, [r7, #12]
  267 00f2 9A42     		cmp	r2, r3
  268 00f4 C2DB     		blt	.L5
-  43:../src/main.c **** 	}
-  44:../src/main.c **** 
-  45:../src/main.c **** 	// print all distances
-  46:../src/main.c **** //	for (i=0; i<N; i++){
-  47:../src/main.c **** //		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
-  48:../src/main.c **** //	}
-  49:../src/main.c **** 
-  50:../src/main.c **** 	// find the k=1 nearest neighbors
-  51:../src/main.c **** 
-  52:../src/main.c **** 	d1 = d[0];
- 269              		.loc 1 52 0 is_stmt 1
+  44:../src/main.c **** 	}
+  45:../src/main.c **** 
+  46:../src/main.c **** 	// print all distances
+  47:../src/main.c **** //	for (i=0; i<N; i++){
+  48:../src/main.c **** //		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
+  49:../src/main.c **** //	}
+  50:../src/main.c **** 
+  51:../src/main.c **** 	// find the k=1 nearest neighbors
+  52:../src/main.c **** 
+  53:../src/main.c **** 	d1 = d[0];
+ 269              		.loc 1 53 0 is_stmt 1
  270 00f6 3B69     		ldr	r3, [r7, #16]
  271 00f8 1B68     		ldr	r3, [r3, #0]
  272 00fa BB61     		str	r3, [r7, #24]
-  53:../src/main.c **** 	class = label[0];
- 273              		.loc 1 53 0
+  54:../src/main.c **** 	class = label[0];
+ 273              		.loc 1 54 0
  274 00fc 7B68     		ldr	r3, [r7, #4]
  275 00fe 1B68     		ldr	r3, [r3, #0]
  276 0100 FB61     		str	r3, [r7, #28]
-  54:../src/main.c **** 	for (j=0; j<N; j++){
- 277              		.loc 1 54 0
+  55:../src/main.c **** 	for (j=0; j<N; j++){
+ 277              		.loc 1 55 0
  278 0102 4FF00003 		mov	r3, #0
  279 0106 3B62     		str	r3, [r7, #32]
  280 0108 16E0     		b	.L6
  281              	.L8:
-  55:../src/main.c **** 		if (d[j]<d1){
- 282              		.loc 1 55 0
+  56:../src/main.c **** 		if (d[j]<d1){
+ 282              		.loc 1 56 0
  283 010a 3B69     		ldr	r3, [r7, #16]
  284 010c 3A6A     		ldr	r2, [r7, #32]
  285 010e 53F82220 		ldr	r2, [r3, r2, lsl #2]
  286 0112 BB69     		ldr	r3, [r7, #24]
  287 0114 9A42     		cmp	r2, r3
  288 0116 0BDA     		bge	.L7
-  56:../src/main.c **** 			class = label[j];
- 289              		.loc 1 56 0
+  57:../src/main.c **** 			class = label[j];
+ 289              		.loc 1 57 0
  290 0118 3B6A     		ldr	r3, [r7, #32]
  291 011a 4FEA8303 		lsl	r3, r3, #2
  292 011e 7A68     		ldr	r2, [r7, #4]
  293 0120 D318     		adds	r3, r2, r3
  294 0122 1B68     		ldr	r3, [r3, #0]
  295 0124 FB61     		str	r3, [r7, #28]
-  57:../src/main.c **** 			d1 = d[j];
- 296              		.loc 1 57 0
+  58:../src/main.c **** 			d1 = d[j];
+ 296              		.loc 1 58 0
  297 0126 3B69     		ldr	r3, [r7, #16]
  298 0128 3A6A     		ldr	r2, [r7, #32]
  299 012a 53F82230 		ldr	r3, [r3, r2, lsl #2]
  300 012e BB61     		str	r3, [r7, #24]
  301              	.L7:
-  54:../src/main.c **** 	for (j=0; j<N; j++){
- 302              		.loc 1 54 0
+  55:../src/main.c **** 	for (j=0; j<N; j++){
+ 302              		.loc 1 55 0
  303 0130 3B6A     		ldr	r3, [r7, #32]
  304 0132 03F10103 		add	r3, r3, #1
  305 0136 3B62     		str	r3, [r7, #32]
  306              	.L6:
-  54:../src/main.c **** 	for (j=0; j<N; j++){
- 307              		.loc 1 54 0 is_stmt 0 discriminator 1
+  55:../src/main.c **** 	for (j=0; j<N; j++){
+ 307              		.loc 1 55 0 is_stmt 0 discriminator 1
  308 0138 3A6A     		ldr	r2, [r7, #32]
  309 013a FB68     		ldr	r3, [r7, #12]
  310 013c 9A42     		cmp	r2, r3
  311 013e E4DB     		blt	.L8
-  58:../src/main.c **** 		}
-  59:../src/main.c **** 	}
-  60:../src/main.c **** 	
-  61:../src/main.c **** 	return class;
- 312              		.loc 1 61 0 is_stmt 1
+  59:../src/main.c **** 		}
+  60:../src/main.c **** 	}
+  61:../src/main.c **** 	
+  62:../src/main.c **** 	return class;
+ 312              		.loc 1 62 0 is_stmt 1
  313 0140 FB69     		ldr	r3, [r7, #28]
  314 0142 B546     		mov	sp, r6
-  62:../src/main.c **** }
- 315              		.loc 1 62 0
+  63:../src/main.c **** }
+ 315              		.loc 1 63 0
  316 0144 1846     		mov	r0, r3
  317 0146 07F12807 		add	r7, r7, #40
  318 014a BD46     		mov	sp, r7
@@ -396,16 +397,16 @@
  325              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:19     .rodata:00000000 $d
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:20     .rodata:00000000 .LC3
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:23     .rodata:00000014 .LC4
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:26     .rodata:00000028 .LC0
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:44     .rodata:00000068 .LC1
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:54     .rodata:00000088 .LC2
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:58     .text.main:00000000 $t
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:63     .text.main:00000000 main
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:150    .text.classification_c:00000000 classification_c
-C:\Users\ngnig\AppData\Local\Temp\ccuvDeFl.s:145    .text.classification_c:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:19     .rodata:00000000 $d
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:20     .rodata:00000000 .LC3
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:23     .rodata:00000014 .LC4
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:26     .rodata:00000028 .LC0
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:44     .rodata:00000068 .LC1
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:54     .rodata:00000088 .LC2
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:58     .text.main:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:63     .text.main:00000000 main
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:150    .text.classification_c:00000000 classification_c
+C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:145    .text.classification_c:00000000 $t
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
