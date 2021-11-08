@@ -98,8 +98,8 @@ GET_EUCLIDEAN:
 
 	LDR R4, [R6]	@stores point x value into R4
 	LDR R5, [R7] 	@stores sample x value into R5
-	SUB R5, R4		@gets difference between sample and point, store to R5
-	MOV R4, R5		@stores difference to R4
+	SUBS R5, R4		@gets difference between sample and point, store to R5
+	LDR R4, [R5]	@stores difference to R4
 	MUL R4, R5		@calculate the squared value of difference
 
 	LDR R6, =x_s	@get address of x squared variable
@@ -109,11 +109,10 @@ GET_EUCLIDEAN:
 	@load point y, sample y
 	LDR R6, =point_y
 	LDR R7, =sample_y
-
-	LDR R4, [R6]	@loads point y value into R4
-	LDR R5, [R7] 	@loads sample y value into R5
-	SUB R5, R4		@gets difference between sample and point, store to R5
-	MOV R4, R5	@stores difference to R4
+	LDR R4, [R6]	@stores point y value into R4
+	LDR R5, [R7] 	@stores sample y value into R5
+	SUBS R5, R4		@gets difference between sample and point, store to R5
+	LDR R4, [R5]	@stores difference to R4
 	MUL R4, R5		@calculate the squared value of difference
 
 	LDR R6, =y_s	@get address of y squared variable
