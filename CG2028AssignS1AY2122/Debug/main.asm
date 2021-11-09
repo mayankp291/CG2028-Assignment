@@ -397,16 +397,16 @@
  325              	.Letext0:
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:19     .rodata:00000000 $d
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:20     .rodata:00000000 .LC3
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:23     .rodata:00000014 .LC4
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:26     .rodata:00000028 .LC0
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:44     .rodata:00000068 .LC1
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:54     .rodata:00000088 .LC2
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:58     .text.main:00000000 $t
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:63     .text.main:00000000 main
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:150    .text.classification_c:00000000 classification_c
-C:\Users\ngnig\AppData\Local\Temp\ccZhWSZz.s:145    .text.classification_c:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:19     .rodata:00000000 $d
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:20     .rodata:00000000 .LC3
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:23     .rodata:00000014 .LC4
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:26     .rodata:00000028 .LC0
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:44     .rodata:00000068 .LC1
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:54     .rodata:00000088 .LC2
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:58     .text.main:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:63     .text.main:00000000 main
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:150    .text.classification_c:00000000 classification_c
+C:\Users\ngnig\AppData\Local\Temp\cc39EKZJ.s:145    .text.classification_c:00000000 $t
                      .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS

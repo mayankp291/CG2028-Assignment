@@ -12,7 +12,7 @@
 @ student 2: Name: Mayank Panjiyara, Matriculation No.: A0221571N
 
 @Register map
-@R0 - N, returns class
+@R0 - N, returns class	
 @R1 - pointer to points
 @R2 - pointer to label
 @R3 - pointer to sample
@@ -22,13 +22,13 @@
 @R7 - calculates (difference in y)^2, stores value of CURRENT_DISTANCE
 @R8 - stores CURRENT_DISTANCE_LABEL
 @R9 - stores MIN_DISTANCE
-@R10 -stores MIN_DISTANCE_LABEL
+@R10 -stores MIN_DISTANCE_LABEL 
 
 classification:
     PUSH {R1-R10,R14}
 	MOV R9, #0x0FFFFFFF		@initialise minimym distance to max signed int
   	LDR R10, [R2], #4 @store label[0] and increment
-
+  	
 
  LOOP:
 	BL EUCLIDEAN_DISTANCE
@@ -41,7 +41,7 @@ classification:
 	BNE LOOP				@If N != 0, go to LOOP
 
 @prepares return value
-    MOV R0, R10 @moves identified class into R0
+    MOV R0, R10 @moves identified class into R0	
     POP {R1-R10,R14}
 
 @return to main.c
@@ -57,4 +57,4 @@ EUCLIDEAN_DISTANCE:
 	LDR R5, [R3, #4]		@store sample[1] value into R5
   	SUB R7, R4, R5			@store (point[1] - sample[1])
 	MLA R7, R7, R7, R6		@store (point[1] - sample[1])^2 + (point[0] - sample[0])^2 in R7 (CURRENT_DISTANCE)
-  	BX LR
+  	B

@@ -688,3 +688,24 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY com.crt.log 1 0 2021-11-08 10:55:36.094
 !MESSAGE Drivers loaded in 1854 milliseconds
+!SESSION 2021-11-09 14:00:03.727 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_SG
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY com.crt.log 1 0 2021-11-09 14:05:48.665
+!MESSAGE Drivers loaded in 2118 milliseconds
+
+!ENTRY com.crt.ctrlcenter 4 -1 2021-11-09 14:07:00.744
+!MESSAGE Internal error: unable to locate launch delegate
+
+!ENTRY com.crt.ctrlcenter 4 -1 2021-11-09 14:07:12.276
+!MESSAGE Internal error: unable to locate launch delegate
+
+!ENTRY com.crt.ctrlcenter 4 -1 2021-11-09 14:07:18.493
+!MESSAGE Internal error: unable to locate launch delegate
+
+!ENTRY com.crt.ctrlcenter 4 -1 2021-11-09 14:07:38.317
+!MESSAGE Internal error: unable to locate launch delegate
