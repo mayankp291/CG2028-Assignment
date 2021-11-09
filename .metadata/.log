@@ -793,3 +793,54 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY com.crt.log 1 0 2021-11-09 16:14:08.572
 !MESSAGE Drivers loaded in 1828 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 16:23:11.114
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:23:11.114
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:23:11.114
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:23:11.114
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 16:23:38.048
+!MESSAGE Drivers loaded in 1825 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 16:29:39.355
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:29:39.355
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:29:39.355
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:29:39.355
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 16:29:59.843
+!MESSAGE Drivers loaded in 1759 milliseconds
+
+!ENTRY com.crt.log 1 0 2021-11-09 16:36:51.320
+!MESSAGE Drivers loaded in 1662 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 16:37:03.731
+!MESSAGE 10: Could not start execution from stop
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:37:03.731
+!MESSAGE 10: Could not start execution from stop
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:37:03.731
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:37:03.731
+!MESSAGE 15: Target error from Register access
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:37:03.731
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 16:37:45.065
+!MESSAGE Drivers loaded in 1738 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 16:48:50.897
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:48:50.897
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:48:50.897
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 16:49:03.358
+!MESSAGE Drivers loaded in 1758 milliseconds

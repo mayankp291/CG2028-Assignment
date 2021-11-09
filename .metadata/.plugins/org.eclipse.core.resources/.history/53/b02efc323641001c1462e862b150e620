@@ -11,14 +11,14 @@ int classification_c(int N, int* points, int* label, int* sample); // reference 
 int main(void)
 {
 	//variables
-	int N = 16;
+	int N = 8;
 	// think of the values below as numbers of the form x.y
 	// (decimal fixed point with 1 fractional decimal digits precision)
 	// which are scaled up to allow them to be used integers
 
 	//35, 0 -> 15,20
-	int points[32] = {-3985 ,-8458 ,-9312 ,-6544 ,9440 ,-5126 ,953 ,-9748 ,6864 ,-5078 ,927 ,7889 ,7305 ,-6877 ,-3054 ,4841 ,1248 ,2780 ,2682 ,4161 ,5553 ,-6482 ,-6503 ,7302 ,-4091 ,3660 ,6670 ,1468 ,-798 ,4966 ,545 ,2045};
-	int label[16] = {1 ,1 ,0 ,1 ,1 ,0 ,1 ,1 ,0 ,1 ,1 ,1 ,1 ,1 ,0};
+	int points[16] = {18 , -3 , 69 , 59 , -82 , -86 , 35 , 79 , 65 , 8 , -47 , -74 , 67 , 98 , 94 , 53};
+	int label[8] = {1, 1, 0, 0, 1, 0, 1, 0};
 	int sample[2] = {25, 1};
 
 	// Call assembly language function to perform classification
