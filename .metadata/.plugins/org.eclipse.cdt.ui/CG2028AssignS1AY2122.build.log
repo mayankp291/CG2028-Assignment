@@ -1,6 +1,6 @@
-14:20:23 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
+16:14:03 **** Incremental Build of configuration Debug for project CG2028AssignS1AY2122 ****
 make all 
 make: Nothing to be done for `all'.
 
-14:20:23 Build Finished (took 142ms)
+16:14:03 Build Finished (took 119ms)
 

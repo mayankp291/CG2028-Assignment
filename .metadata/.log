@@ -733,3 +733,63 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY com.crt.log 1 0 2021-11-09 14:20:27.434
 !MESSAGE Drivers loaded in 1695 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 15:21:06.640
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:21:06.640
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:21:06.641
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:21:06.641
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 15:21:25.267
+!MESSAGE Drivers loaded in 1837 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 15:39:16.733
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:39:16.733
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:39:16.733
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:39:16.733
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 15:39:33.255
+!MESSAGE Drivers loaded in 1890 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 15:57:45.847
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:57:45.847
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:57:45.847
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 15:57:45.847
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 15:57:58.479
+!MESSAGE Drivers loaded in 1794 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 16:02:55.305
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:02:55.305
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:02:55.305
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:02:55.305
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 16:03:09.826
+!MESSAGE Drivers loaded in 1826 milliseconds
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 16:13:55.090
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:13:55.090
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:13:55.090
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 16:13:55.090
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 16:14:08.572
+!MESSAGE Drivers loaded in 1828 milliseconds

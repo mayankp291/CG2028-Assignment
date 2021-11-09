@@ -1,0 +1,68 @@
+.syntax unified
+   .cpu cortex-m3
+   .thumb
+   .align 2
+   .global  classification
+   .thumb_func
+
+@ CG2028 Assignment, Sem 2, AY 2021/21
+@ (c) CG2028 Teaching Team, ECE NUS, 2021
+
+@ student 1: Name: , Matriculation No.:
+@ student 2: Name: , Matriculation No.:
+@ eg: student 1: Name: John Doe , Matriculation No.: A021234N
+
+@Register map
+@R0 - N, returns class
+@R1 - pointer to points
+@R2 - pointer to label
+@R3 - pointer to sample
+@R4 - stores point
+@R5 - stores sample
+@R6 - calculates (difference in x)^2, get value of label[i]
+@R7 - calculates (difference in y)^2, stores value of CURRENT_DISTANCE
+@R8 - stores CURRENT_DISTANCE_LABEL
+@R9 - stores MIN_DISTANCE
+@R10 -stores MIN_DISTANCE_LABEL, class
+
+classification:
+@ PUSH / save (only those) registers which are modified by your function
+    PUSH {R1-R10,R14}
+@ parameter registers need not be saved.
+
+@ write asm function body here
+
+  	BL EUCLIDEAN_DISTANCE
+  	LDR R10, [R2], #4 @store label[0] and increment
+  	MOV R9, R7 @move CURRENT_DISTANCE to R9, initialise R9
+	SUBS R0, #1 @N - 1
+
+@ branch to SUBROUTINE for illustration only
+@ you could write your code without SUBROUTINE
+ LOOP:
+	BL EUCLIDEAN_DISTANCE
+	LDR R8, [R2], #4 @store label[i] and increment
+	CMP R9, R7 @CURRENT_DISTANCE - MIN_DISTANCE
+	ITT PL @if CURRENT_DISTANCE <= MIN_DISTANCE
+	MOVPL R9, R7 @MOVE CURRENT_DISTANCE INTO MIN_DISTANCE
+	MOVPL R10, R8 @MOVE CURRENT_LABEL TO CLASS
+	SUBS R0, #1 @N - 1
+	BNE LOOP
+
+@ prepare value to return (class) to C program in R0
+    MOV R0, R10 @moves identified class into R0
+    POP {R1-R10,R14}
+@ return to C program
+    BX LR
+
+
+EUCLIDEAN_DISTANCE:
+	LDR R4, [R1], #4 @store point[0] value into R4 and increment R1
+	LDR R5, [R3] @store sample[0] value into R5 and increment R3
+	SUB R6, R4, R5 @store (point[0] - sample[0])
+	MUL R6, R6, R6	@store (point[0] - sample[0])^2
+	LDR R4, [R1], #4 @store point[1] value into R4 and increment R1
+	LDR R5, [R3, #4] @store sample[1] value into R5
+  	SUB R7, R4, R5 @store (point[1] - sample[1])
+	MLA R7, R7, R7, R6	@store (point[1] - sample[1])^2 + (point[0] - sample[0])^2 in R7 (CURRENT_DISTANCE)
+  	BX LR

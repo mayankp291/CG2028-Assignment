@@ -17,9 +17,9 @@ int main(void)
 	// which are scaled up to allow them to be used integers
 
 	//35, 0 -> 15,20
-	int points[16] = {15, 20, 0, 15, 10, 10, 10, 0, 30, 0, 30, 10, 40, 0, 40, 10};
+	int points[16] = {18 , -3 , 69 , 59 , -82 , -86 , 35 , 79 , 65 , 8 , -47 , -74 , 67 , 98 , 94 , 53};
 	int label[8] = {1, 1, 0, 0, 1, 0, 1, 0};
-	int sample[2] = {15, 20};
+	int sample[2] = {25, 1};
 
 	// Call assembly language function to perform classification
 	printf( "asm: class = %d \n", classification(N, points, label, sample) ) ;
@@ -44,9 +44,9 @@ int classification_c(int N, int* points, int* label, int* sample)
 	}
 
 	// print all distances
-//	for (i=0; i<N; i++){
-//		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
-//	}
+	for (i=0; i<N; i++){
+		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
+	}
 
 	// find the k=1 nearest neighbors
 
