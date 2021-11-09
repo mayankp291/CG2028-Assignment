@@ -36,7 +36,7 @@ libLib_MCU.a: $(OBJS) $(USER_OBJS)
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(ARCHIVES)$(C_DEPS) libLib_MCU.a
+	-$(RM) $(OBJS)$(C_DEPS)$(ARCHIVES) libLib_MCU.a
 	-@echo ' '
 
 post-build:

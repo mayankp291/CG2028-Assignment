@@ -11,74 +11,73 @@
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
-  14              		.syntax unified
-  15              		.file	"cr_startup_lpc17.c"
-  16              		.text
-  17              	.Ltext0:
-  18              		.cfi_sections	.debug_frame
-  19              		.global	g_pfnVectors
-  20              		.section	.isr_vector,"a",%progbits
-  21              		.align	2
-  24              	g_pfnVectors:
-  25 0000 00000000 		.word	_vStackTop
-  26 0004 00000000 		.word	ResetISR
-  27 0008 00000000 		.word	NMI_Handler
-  28 000c 00000000 		.word	HardFault_Handler
-  29 0010 00000000 		.word	MemManage_Handler
-  30 0014 00000000 		.word	BusFault_Handler
-  31 0018 00000000 		.word	UsageFault_Handler
-  32 001c 00000000 		.word	0
-  33 0020 00000000 		.word	0
-  34 0024 00000000 		.word	0
-  35 0028 00000000 		.word	0
-  36 002c 00000000 		.word	SVCall_Handler
-  37 0030 00000000 		.word	DebugMon_Handler
-  38 0034 00000000 		.word	0
-  39 0038 00000000 		.word	PendSV_Handler
-  40 003c 00000000 		.word	SysTick_Handler
-  41 0040 00000000 		.word	WDT_IRQHandler
-  42 0044 00000000 		.word	TIMER0_IRQHandler
-  43 0048 00000000 		.word	TIMER1_IRQHandler
-  44 004c 00000000 		.word	TIMER2_IRQHandler
-  45 0050 00000000 		.word	TIMER3_IRQHandler
-  46 0054 00000000 		.word	UART0_IRQHandler
-  47 0058 00000000 		.word	UART1_IRQHandler
-  48 005c 00000000 		.word	UART2_IRQHandler
-  49 0060 00000000 		.word	UART3_IRQHandler
-  50 0064 00000000 		.word	PWM1_IRQHandler
-  51 0068 00000000 		.word	I2C0_IRQHandler
-  52 006c 00000000 		.word	I2C1_IRQHandler
-  53 0070 00000000 		.word	I2C2_IRQHandler
-  54 0074 00000000 		.word	SPI_IRQHandler
-  55 0078 00000000 		.word	SSP0_IRQHandler
-  56 007c 00000000 		.word	SSP1_IRQHandler
-  57 0080 00000000 		.word	PLL0_IRQHandler
-  58 0084 00000000 		.word	RTC_IRQHandler
-  59 0088 00000000 		.word	EINT0_IRQHandler
-  60 008c 00000000 		.word	EINT1_IRQHandler
-  61 0090 00000000 		.word	EINT2_IRQHandler
-  62 0094 00000000 		.word	EINT3_IRQHandler
-  63 0098 00000000 		.word	ADC_IRQHandler
-  64 009c 00000000 		.word	BOD_IRQHandler
-  65 00a0 00000000 		.word	USB_IRQHandler
-  66 00a4 00000000 		.word	CAN_IRQHandler
-  67 00a8 00000000 		.word	DMA_IRQHandler
-  68 00ac 00000000 		.word	I2S_IRQHandler
-  69 00b0 00000000 		.word	ENET_IRQHandler
-  70 00b4 00000000 		.word	RIT_IRQHandler
-  71 00b8 00000000 		.word	MCPWM_IRQHandler
-  72 00bc 00000000 		.word	QEI_IRQHandler
-  73 00c0 00000000 		.word	PLL1_IRQHandler
-  74 00c4 00000000 		.word	USBActivity_IRQHandler
-  75 00c8 00000000 		.word	CANActivity_IRQHandler
-  76              		.section	.text.ResetISR,"ax",%progbits
-  77              		.align	2
-  78              		.global	ResetISR
-  79              		.thumb
-  80              		.thumb_func
-  82              	ResetISR:
-  83              	.LFB0:
-  84              		.file 1 "../src/cr_startup_lpc17.c"
+  14              		.file	"cr_startup_lpc17.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.global	g_pfnVectors
+  19              		.section	.isr_vector,"a",%progbits
+  20              		.align	2
+  23              	g_pfnVectors:
+  24 0000 00000000 		.word	_vStackTop
+  25 0004 00000000 		.word	ResetISR
+  26 0008 00000000 		.word	NMI_Handler
+  27 000c 00000000 		.word	HardFault_Handler
+  28 0010 00000000 		.word	MemManage_Handler
+  29 0014 00000000 		.word	BusFault_Handler
+  30 0018 00000000 		.word	UsageFault_Handler
+  31 001c 00000000 		.word	0
+  32 0020 00000000 		.word	0
+  33 0024 00000000 		.word	0
+  34 0028 00000000 		.word	0
+  35 002c 00000000 		.word	SVCall_Handler
+  36 0030 00000000 		.word	DebugMon_Handler
+  37 0034 00000000 		.word	0
+  38 0038 00000000 		.word	PendSV_Handler
+  39 003c 00000000 		.word	SysTick_Handler
+  40 0040 00000000 		.word	WDT_IRQHandler
+  41 0044 00000000 		.word	TIMER0_IRQHandler
+  42 0048 00000000 		.word	TIMER1_IRQHandler
+  43 004c 00000000 		.word	TIMER2_IRQHandler
+  44 0050 00000000 		.word	TIMER3_IRQHandler
+  45 0054 00000000 		.word	UART0_IRQHandler
+  46 0058 00000000 		.word	UART1_IRQHandler
+  47 005c 00000000 		.word	UART2_IRQHandler
+  48 0060 00000000 		.word	UART3_IRQHandler
+  49 0064 00000000 		.word	PWM1_IRQHandler
+  50 0068 00000000 		.word	I2C0_IRQHandler
+  51 006c 00000000 		.word	I2C1_IRQHandler
+  52 0070 00000000 		.word	I2C2_IRQHandler
+  53 0074 00000000 		.word	SPI_IRQHandler
+  54 0078 00000000 		.word	SSP0_IRQHandler
+  55 007c 00000000 		.word	SSP1_IRQHandler
+  56 0080 00000000 		.word	PLL0_IRQHandler
+  57 0084 00000000 		.word	RTC_IRQHandler
+  58 0088 00000000 		.word	EINT0_IRQHandler
+  59 008c 00000000 		.word	EINT1_IRQHandler
+  60 0090 00000000 		.word	EINT2_IRQHandler
+  61 0094 00000000 		.word	EINT3_IRQHandler
+  62 0098 00000000 		.word	ADC_IRQHandler
+  63 009c 00000000 		.word	BOD_IRQHandler
+  64 00a0 00000000 		.word	USB_IRQHandler
+  65 00a4 00000000 		.word	CAN_IRQHandler
+  66 00a8 00000000 		.word	DMA_IRQHandler
+  67 00ac 00000000 		.word	I2S_IRQHandler
+  68 00b0 00000000 		.word	ENET_IRQHandler
+  69 00b4 00000000 		.word	RIT_IRQHandler
+  70 00b8 00000000 		.word	MCPWM_IRQHandler
+  71 00bc 00000000 		.word	QEI_IRQHandler
+  72 00c0 00000000 		.word	PLL1_IRQHandler
+  73 00c4 00000000 		.word	USBActivity_IRQHandler
+  74 00c8 00000000 		.word	CANActivity_IRQHandler
+  75              		.section	.text.ResetISR,"ax",%progbits
+  76              		.align	2
+  77              		.global	ResetISR
+  78              		.thumb
+  79              		.thumb_func
+  81              	ResetISR:
+  82              	.LFB0:
+  83              		.file 1 "../src/cr_startup_lpc17.c"
    1:../src/cr_startup_lpc17.c **** //*****************************************************************************
    2:../src/cr_startup_lpc17.c **** //   +--+       
    3:../src/cr_startup_lpc17.c **** //   | ++----+   
@@ -306,51 +305,59 @@
  225:../src/cr_startup_lpc17.c **** //*****************************************************************************
  226:../src/cr_startup_lpc17.c **** void
  227:../src/cr_startup_lpc17.c **** ResetISR(void) {
-  85              		.loc 1 227 0
-  86              		.cfi_startproc
-  87              		@ args = 0, pretend = 0, frame = 8
-  88              		@ frame_needed = 1, uses_anonymous_args = 0
-  89 0000 80B5     		push	{r7, lr}
+  84              		.loc 1 227 0
+  85              		.cfi_startproc
+  86              		@ args = 0, pretend = 0, frame = 8
+  87              		@ frame_needed = 1, uses_anonymous_args = 0
+  88 0000 80B5     		push	{r7, lr}
+  89              	.LCFI0:
   90              		.cfi_def_cfa_offset 8
-  91              		.cfi_offset 7, -8
-  92              		.cfi_offset 14, -4
+  91              		.cfi_offset 14, -4
+  92              		.cfi_offset 7, -8
   93 0002 82B0     		sub	sp, sp, #8
-  94              		.cfi_def_cfa_offset 16
-  95 0004 00AF     		add	r7, sp, #0
-  96              		.cfi_def_cfa_register 7
+  94              	.LCFI1:
+  95              		.cfi_def_cfa_offset 16
+  96 0004 00AF     		add	r7, sp, #0
+  97              	.LCFI2:
+  98              		.cfi_def_cfa_register 7
  228:../src/cr_startup_lpc17.c ****     unsigned long *pulSrc, *pulDest;
  229:../src/cr_startup_lpc17.c **** 
  230:../src/cr_startup_lpc17.c ****     //
  231:../src/cr_startup_lpc17.c ****     // Copy the data segment initializers from flash to SRAM.
  232:../src/cr_startup_lpc17.c ****     //
  233:../src/cr_startup_lpc17.c ****     pulSrc = &_etext;
-  97              		.loc 1 233 0
-  98 0006 0F4B     		ldr	r3, .L5
-  99 0008 7B60     		str	r3, [r7, #4]
+  99              		.loc 1 233 0
+ 100 0006 40F20003 		movw	r3, #:lower16:_etext
+ 101 000a C0F20003 		movt	r3, #:upper16:_etext
+ 102 000e 7B60     		str	r3, [r7, #4]
  234:../src/cr_startup_lpc17.c ****     for(pulDest = &_data; pulDest < &_edata; )
- 100              		.loc 1 234 0
- 101 000a 0F4B     		ldr	r3, .L5+4
- 102 000c 3B60     		str	r3, [r7]
- 103 000e 07E0     		b	.L2
- 104              	.L3:
+ 103              		.loc 1 234 0
+ 104 0010 40F20003 		movw	r3, #:lower16:_data
+ 105 0014 C0F20003 		movt	r3, #:upper16:_data
+ 106 0018 3B60     		str	r3, [r7, #0]
+ 107 001a 0BE0     		b	.L2
+ 108              	.L3:
  235:../src/cr_startup_lpc17.c ****     {
  236:../src/cr_startup_lpc17.c ****         *pulDest++ = *pulSrc++;
- 105              		.loc 1 236 0
- 106 0010 3B68     		ldr	r3, [r7]
- 107 0012 1A1D     		adds	r2, r3, #4
- 108 0014 3A60     		str	r2, [r7]
- 109 0016 7A68     		ldr	r2, [r7, #4]
- 110 0018 111D     		adds	r1, r2, #4
- 111 001a 7960     		str	r1, [r7, #4]
- 112 001c 1268     		ldr	r2, [r2]
- 113 001e 1A60     		str	r2, [r3]
- 114              	.L2:
+ 109              		.loc 1 236 0
+ 110 001c 7B68     		ldr	r3, [r7, #4]
+ 111 001e 1A68     		ldr	r2, [r3, #0]
+ 112 0020 3B68     		ldr	r3, [r7, #0]
+ 113 0022 1A60     		str	r2, [r3, #0]
+ 114 0024 3B68     		ldr	r3, [r7, #0]
+ 115 0026 03F10403 		add	r3, r3, #4
+ 116 002a 3B60     		str	r3, [r7, #0]
+ 117 002c 7B68     		ldr	r3, [r7, #4]
+ 118 002e 03F10403 		add	r3, r3, #4
+ 119 0032 7B60     		str	r3, [r7, #4]
+ 120              	.L2:
  234:../src/cr_startup_lpc17.c ****     for(pulDest = &_data; pulDest < &_edata; )
- 115              		.loc 1 234 0 discriminator 1
- 116 0020 3B68     		ldr	r3, [r7]
- 117 0022 0A4A     		ldr	r2, .L5+8
- 118 0024 9342     		cmp	r3, r2
- 119 0026 F3D3     		bcc	.L3
+ 121              		.loc 1 234 0 discriminator 1
+ 122 0034 3A68     		ldr	r2, [r7, #0]
+ 123 0036 40F20003 		movw	r3, #:lower16:_edata
+ 124 003a C0F20003 		movt	r3, #:upper16:_edata
+ 125 003e 9A42     		cmp	r2, r3
+ 126 0040 ECD3     		bcc	.L3
  237:../src/cr_startup_lpc17.c ****     }
  238:../src/cr_startup_lpc17.c **** 
  239:../src/cr_startup_lpc17.c ****     //
@@ -358,19 +365,18 @@
  241:../src/cr_startup_lpc17.c ****     // will clear the value of pulDest if it is not kept in a register.
  242:../src/cr_startup_lpc17.c ****     //
  243:../src/cr_startup_lpc17.c ****     __asm("    ldr     r0, =_bss\n"
- 120              		.loc 1 243 0
- 121              		.syntax unified
- 122              	@ 243 "../src/cr_startup_lpc17.c" 1
- 123 0028 0948     		    ldr     r0, =_bss
- 124 002a 0A49     	    ldr     r1, =_ebss
- 125 002c 4FF00002 	    mov     r2, #0
- 126              	    .thumb_func
- 127              	zero_loop:
- 128 0030 8842     	        cmp     r0, r1
- 129 0032 B8BF     	        it      lt
- 130 0034 40F8042B 	        strlt   r2, [r0], #4
- 131 0038 FADB     	        blt     zero_loop
- 132              	@ 0 "" 2
+ 127              		.loc 1 243 0
+ 128              	@ 243 "../src/cr_startup_lpc17.c" 1
+ 129 0042 0748     		    ldr     r0, =_bss
+ 130 0044 0749     	    ldr     r1, =_ebss
+ 131 0046 4FF00002 	    mov     r2, #0
+ 132              	    .thumb_func
+ 133              	zero_loop:
+ 134 004a 8842     	        cmp     r0, r1
+ 135 004c B8BF     	        it      lt
+ 136 004e 40F8042B 	        strlt   r2, [r0], #4
+ 137 0052 FADB     	        blt     zero_loop
+ 138              	@ 0 "" 2
  244:../src/cr_startup_lpc17.c ****           "    ldr     r1, =_ebss\n"
  245:../src/cr_startup_lpc17.c ****           "    mov     r2, #0\n"
  246:../src/cr_startup_lpc17.c ****           "    .thumb_func\n"
@@ -382,10 +388,9 @@
  252:../src/cr_startup_lpc17.c **** 
  253:../src/cr_startup_lpc17.c **** #ifdef __USE_CMSIS
  254:../src/cr_startup_lpc17.c **** 	SystemInit();
- 133              		.loc 1 254 0
- 134              		.thumb
- 135              		.syntax unified
- 136 003a FFF7FEFF 		bl	SystemInit
+ 139              		.loc 1 254 0
+ 140              		.thumb
+ 141 0054 FFF7FEFF 		bl	SystemInit
  255:../src/cr_startup_lpc17.c **** #endif
  256:../src/cr_startup_lpc17.c **** 
  257:../src/cr_startup_lpc17.c **** #if defined (__cplusplus)
@@ -398,9 +403,9 @@
  264:../src/cr_startup_lpc17.c **** #if defined (__REDLIB__)
  265:../src/cr_startup_lpc17.c **** 	// Call the Redlib library, which in turn calls main()
  266:../src/cr_startup_lpc17.c **** 	__main() ;
- 137              		.loc 1 266 0
- 138 003e FFF7FEFF 		bl	__main
- 139              	.L4:
+ 142              		.loc 1 266 0
+ 143 0058 FFF7FEFF 		bl	__main
+ 144              	.L4:
  267:../src/cr_startup_lpc17.c **** #else
  268:../src/cr_startup_lpc17.c **** 	main();
  269:../src/cr_startup_lpc17.c **** #endif
@@ -411,23 +416,17 @@
  274:../src/cr_startup_lpc17.c **** 	while (1) {
  275:../src/cr_startup_lpc17.c **** 		;
  276:../src/cr_startup_lpc17.c **** 	}
- 140              		.loc 1 276 0 discriminator 1
- 141 0042 FEE7     		b	.L4
- 142              	.L6:
- 143              		.align	2
- 144              	.L5:
- 145 0044 00000000 		.word	_etext
- 146 0048 00000000 		.word	_data
- 147 004c 00000000 		.word	_edata
- 148              		.cfi_endproc
- 149              	.LFE0:
- 151              		.section	.text.NMI_Handler,"ax",%progbits
- 152              		.align	2
- 153              		.weak	NMI_Handler
- 154              		.thumb
- 155              		.thumb_func
- 157              	NMI_Handler:
- 158              	.LFB1:
+ 145              		.loc 1 276 0 discriminator 1
+ 146 005c FEE7     		b	.L4
+ 147              		.cfi_endproc
+ 148              	.LFE0:
+ 150 005e 0000     		.section	.text.NMI_Handler,"ax",%progbits
+ 151              		.align	2
+ 152              		.weak	NMI_Handler
+ 153              		.thumb
+ 154              		.thumb_func
+ 156              	NMI_Handler:
+ 157              	.LFB1:
  277:../src/cr_startup_lpc17.c **** }
  278:../src/cr_startup_lpc17.c **** 
  279:../src/cr_startup_lpc17.c **** //*****************************************************************************
@@ -439,263 +438,281 @@
  285:../src/cr_startup_lpc17.c **** //*****************************************************************************
  286:../src/cr_startup_lpc17.c **** void NMI_Handler(void)
  287:../src/cr_startup_lpc17.c **** {
- 159              		.loc 1 287 0
- 160              		.cfi_startproc
- 161              		@ args = 0, pretend = 0, frame = 0
- 162              		@ frame_needed = 1, uses_anonymous_args = 0
- 163              		@ link register save eliminated.
- 164 0000 80B4     		push	{r7}
+ 158              		.loc 1 287 0
+ 159              		.cfi_startproc
+ 160              		@ args = 0, pretend = 0, frame = 0
+ 161              		@ frame_needed = 1, uses_anonymous_args = 0
+ 162              		@ link register save eliminated.
+ 163 0000 80B4     		push	{r7}
+ 164              	.LCFI3:
  165              		.cfi_def_cfa_offset 4
  166              		.cfi_offset 7, -4
  167 0002 00AF     		add	r7, sp, #0
- 168              		.cfi_def_cfa_register 7
- 169              	.L8:
+ 168              	.LCFI4:
+ 169              		.cfi_def_cfa_register 7
+ 170              	.L6:
  288:../src/cr_startup_lpc17.c ****     while(1)
  289:../src/cr_startup_lpc17.c ****     {
  290:../src/cr_startup_lpc17.c ****     }
- 170              		.loc 1 290 0 discriminator 1
- 171 0004 FEE7     		b	.L8
- 172              		.cfi_endproc
- 173              	.LFE1:
- 175 0006 00BF     		.section	.text.HardFault_Handler,"ax",%progbits
- 176              		.align	2
- 177              		.weak	HardFault_Handler
- 178              		.thumb
- 179              		.thumb_func
- 181              	HardFault_Handler:
- 182              	.LFB2:
+ 171              		.loc 1 290 0 discriminator 1
+ 172 0004 FEE7     		b	.L6
+ 173              		.cfi_endproc
+ 174              	.LFE1:
+ 176 0006 00BF     		.section	.text.HardFault_Handler,"ax",%progbits
+ 177              		.align	2
+ 178              		.weak	HardFault_Handler
+ 179              		.thumb
+ 180              		.thumb_func
+ 182              	HardFault_Handler:
+ 183              	.LFB2:
  291:../src/cr_startup_lpc17.c **** }
  292:../src/cr_startup_lpc17.c **** 
  293:../src/cr_startup_lpc17.c **** void HardFault_Handler(void)
  294:../src/cr_startup_lpc17.c **** {
- 183              		.loc 1 294 0
- 184              		.cfi_startproc
- 185              		@ args = 0, pretend = 0, frame = 0
- 186              		@ frame_needed = 1, uses_anonymous_args = 0
- 187              		@ link register save eliminated.
- 188 0000 80B4     		push	{r7}
- 189              		.cfi_def_cfa_offset 4
- 190              		.cfi_offset 7, -4
- 191 0002 00AF     		add	r7, sp, #0
- 192              		.cfi_def_cfa_register 7
- 193              	.L10:
+ 184              		.loc 1 294 0
+ 185              		.cfi_startproc
+ 186              		@ args = 0, pretend = 0, frame = 0
+ 187              		@ frame_needed = 1, uses_anonymous_args = 0
+ 188              		@ link register save eliminated.
+ 189 0000 80B4     		push	{r7}
+ 190              	.LCFI5:
+ 191              		.cfi_def_cfa_offset 4
+ 192              		.cfi_offset 7, -4
+ 193 0002 00AF     		add	r7, sp, #0
+ 194              	.LCFI6:
+ 195              		.cfi_def_cfa_register 7
+ 196              	.L8:
  295:../src/cr_startup_lpc17.c ****     while(1)
  296:../src/cr_startup_lpc17.c ****     {
  297:../src/cr_startup_lpc17.c ****     }
- 194              		.loc 1 297 0 discriminator 1
- 195 0004 FEE7     		b	.L10
- 196              		.cfi_endproc
- 197              	.LFE2:
- 199 0006 00BF     		.section	.text.MemManage_Handler,"ax",%progbits
- 200              		.align	2
- 201              		.weak	MemManage_Handler
- 202              		.thumb
- 203              		.thumb_func
- 205              	MemManage_Handler:
- 206              	.LFB3:
+ 197              		.loc 1 297 0 discriminator 1
+ 198 0004 FEE7     		b	.L8
+ 199              		.cfi_endproc
+ 200              	.LFE2:
+ 202 0006 00BF     		.section	.text.MemManage_Handler,"ax",%progbits
+ 203              		.align	2
+ 204              		.weak	MemManage_Handler
+ 205              		.thumb
+ 206              		.thumb_func
+ 208              	MemManage_Handler:
+ 209              	.LFB3:
  298:../src/cr_startup_lpc17.c **** }
  299:../src/cr_startup_lpc17.c **** 
  300:../src/cr_startup_lpc17.c **** void MemManage_Handler(void)
  301:../src/cr_startup_lpc17.c **** {
- 207              		.loc 1 301 0
- 208              		.cfi_startproc
- 209              		@ args = 0, pretend = 0, frame = 0
- 210              		@ frame_needed = 1, uses_anonymous_args = 0
- 211              		@ link register save eliminated.
- 212 0000 80B4     		push	{r7}
- 213              		.cfi_def_cfa_offset 4
- 214              		.cfi_offset 7, -4
- 215 0002 00AF     		add	r7, sp, #0
- 216              		.cfi_def_cfa_register 7
- 217              	.L12:
+ 210              		.loc 1 301 0
+ 211              		.cfi_startproc
+ 212              		@ args = 0, pretend = 0, frame = 0
+ 213              		@ frame_needed = 1, uses_anonymous_args = 0
+ 214              		@ link register save eliminated.
+ 215 0000 80B4     		push	{r7}
+ 216              	.LCFI7:
+ 217              		.cfi_def_cfa_offset 4
+ 218              		.cfi_offset 7, -4
+ 219 0002 00AF     		add	r7, sp, #0
+ 220              	.LCFI8:
+ 221              		.cfi_def_cfa_register 7
+ 222              	.L10:
  302:../src/cr_startup_lpc17.c ****     while(1)
  303:../src/cr_startup_lpc17.c ****     {
  304:../src/cr_startup_lpc17.c ****     }
- 218              		.loc 1 304 0 discriminator 1
- 219 0004 FEE7     		b	.L12
- 220              		.cfi_endproc
- 221              	.LFE3:
- 223 0006 00BF     		.section	.text.BusFault_Handler,"ax",%progbits
- 224              		.align	2
- 225              		.weak	BusFault_Handler
- 226              		.thumb
- 227              		.thumb_func
- 229              	BusFault_Handler:
- 230              	.LFB4:
+ 223              		.loc 1 304 0 discriminator 1
+ 224 0004 FEE7     		b	.L10
+ 225              		.cfi_endproc
+ 226              	.LFE3:
+ 228 0006 00BF     		.section	.text.BusFault_Handler,"ax",%progbits
+ 229              		.align	2
+ 230              		.weak	BusFault_Handler
+ 231              		.thumb
+ 232              		.thumb_func
+ 234              	BusFault_Handler:
+ 235              	.LFB4:
  305:../src/cr_startup_lpc17.c **** }
  306:../src/cr_startup_lpc17.c **** 
  307:../src/cr_startup_lpc17.c **** void BusFault_Handler(void)
  308:../src/cr_startup_lpc17.c **** {
- 231              		.loc 1 308 0
- 232              		.cfi_startproc
- 233              		@ args = 0, pretend = 0, frame = 0
- 234              		@ frame_needed = 1, uses_anonymous_args = 0
- 235              		@ link register save eliminated.
- 236 0000 80B4     		push	{r7}
- 237              		.cfi_def_cfa_offset 4
- 238              		.cfi_offset 7, -4
- 239 0002 00AF     		add	r7, sp, #0
- 240              		.cfi_def_cfa_register 7
- 241              	.L14:
+ 236              		.loc 1 308 0
+ 237              		.cfi_startproc
+ 238              		@ args = 0, pretend = 0, frame = 0
+ 239              		@ frame_needed = 1, uses_anonymous_args = 0
+ 240              		@ link register save eliminated.
+ 241 0000 80B4     		push	{r7}
+ 242              	.LCFI9:
+ 243              		.cfi_def_cfa_offset 4
+ 244              		.cfi_offset 7, -4
+ 245 0002 00AF     		add	r7, sp, #0
+ 246              	.LCFI10:
+ 247              		.cfi_def_cfa_register 7
+ 248              	.L12:
  309:../src/cr_startup_lpc17.c ****     while(1)
  310:../src/cr_startup_lpc17.c ****     {
  311:../src/cr_startup_lpc17.c ****     }
- 242              		.loc 1 311 0 discriminator 1
- 243 0004 FEE7     		b	.L14
- 244              		.cfi_endproc
- 245              	.LFE4:
- 247 0006 00BF     		.section	.text.UsageFault_Handler,"ax",%progbits
- 248              		.align	2
- 249              		.weak	UsageFault_Handler
- 250              		.thumb
- 251              		.thumb_func
- 253              	UsageFault_Handler:
- 254              	.LFB5:
+ 249              		.loc 1 311 0 discriminator 1
+ 250 0004 FEE7     		b	.L12
+ 251              		.cfi_endproc
+ 252              	.LFE4:
+ 254 0006 00BF     		.section	.text.UsageFault_Handler,"ax",%progbits
+ 255              		.align	2
+ 256              		.weak	UsageFault_Handler
+ 257              		.thumb
+ 258              		.thumb_func
+ 260              	UsageFault_Handler:
+ 261              	.LFB5:
  312:../src/cr_startup_lpc17.c **** }
  313:../src/cr_startup_lpc17.c **** 
  314:../src/cr_startup_lpc17.c **** void UsageFault_Handler(void)
  315:../src/cr_startup_lpc17.c **** {
- 255              		.loc 1 315 0
- 256              		.cfi_startproc
- 257              		@ args = 0, pretend = 0, frame = 0
- 258              		@ frame_needed = 1, uses_anonymous_args = 0
- 259              		@ link register save eliminated.
- 260 0000 80B4     		push	{r7}
- 261              		.cfi_def_cfa_offset 4
- 262              		.cfi_offset 7, -4
- 263 0002 00AF     		add	r7, sp, #0
- 264              		.cfi_def_cfa_register 7
- 265              	.L16:
+ 262              		.loc 1 315 0
+ 263              		.cfi_startproc
+ 264              		@ args = 0, pretend = 0, frame = 0
+ 265              		@ frame_needed = 1, uses_anonymous_args = 0
+ 266              		@ link register save eliminated.
+ 267 0000 80B4     		push	{r7}
+ 268              	.LCFI11:
+ 269              		.cfi_def_cfa_offset 4
+ 270              		.cfi_offset 7, -4
+ 271 0002 00AF     		add	r7, sp, #0
+ 272              	.LCFI12:
+ 273              		.cfi_def_cfa_register 7
+ 274              	.L14:
  316:../src/cr_startup_lpc17.c ****     while(1)
  317:../src/cr_startup_lpc17.c ****     {
  318:../src/cr_startup_lpc17.c ****     }
- 266              		.loc 1 318 0 discriminator 1
- 267 0004 FEE7     		b	.L16
- 268              		.cfi_endproc
- 269              	.LFE5:
- 271 0006 00BF     		.section	.text.SVCall_Handler,"ax",%progbits
- 272              		.align	2
- 273              		.weak	SVCall_Handler
- 274              		.thumb
- 275              		.thumb_func
- 277              	SVCall_Handler:
- 278              	.LFB6:
+ 275              		.loc 1 318 0 discriminator 1
+ 276 0004 FEE7     		b	.L14
+ 277              		.cfi_endproc
+ 278              	.LFE5:
+ 280 0006 00BF     		.section	.text.SVCall_Handler,"ax",%progbits
+ 281              		.align	2
+ 282              		.weak	SVCall_Handler
+ 283              		.thumb
+ 284              		.thumb_func
+ 286              	SVCall_Handler:
+ 287              	.LFB6:
  319:../src/cr_startup_lpc17.c **** }
  320:../src/cr_startup_lpc17.c **** 
  321:../src/cr_startup_lpc17.c **** void SVCall_Handler(void)
  322:../src/cr_startup_lpc17.c **** {
- 279              		.loc 1 322 0
- 280              		.cfi_startproc
- 281              		@ args = 0, pretend = 0, frame = 0
- 282              		@ frame_needed = 1, uses_anonymous_args = 0
- 283              		@ link register save eliminated.
- 284 0000 80B4     		push	{r7}
- 285              		.cfi_def_cfa_offset 4
- 286              		.cfi_offset 7, -4
- 287 0002 00AF     		add	r7, sp, #0
- 288              		.cfi_def_cfa_register 7
- 289              	.L18:
+ 288              		.loc 1 322 0
+ 289              		.cfi_startproc
+ 290              		@ args = 0, pretend = 0, frame = 0
+ 291              		@ frame_needed = 1, uses_anonymous_args = 0
+ 292              		@ link register save eliminated.
+ 293 0000 80B4     		push	{r7}
+ 294              	.LCFI13:
+ 295              		.cfi_def_cfa_offset 4
+ 296              		.cfi_offset 7, -4
+ 297 0002 00AF     		add	r7, sp, #0
+ 298              	.LCFI14:
+ 299              		.cfi_def_cfa_register 7
+ 300              	.L16:
  323:../src/cr_startup_lpc17.c ****     while(1)
  324:../src/cr_startup_lpc17.c ****     {
  325:../src/cr_startup_lpc17.c ****     }
- 290              		.loc 1 325 0 discriminator 1
- 291 0004 FEE7     		b	.L18
- 292              		.cfi_endproc
- 293              	.LFE6:
- 295 0006 00BF     		.section	.text.DebugMon_Handler,"ax",%progbits
- 296              		.align	2
- 297              		.weak	DebugMon_Handler
- 298              		.thumb
- 299              		.thumb_func
- 301              	DebugMon_Handler:
- 302              	.LFB7:
+ 301              		.loc 1 325 0 discriminator 1
+ 302 0004 FEE7     		b	.L16
+ 303              		.cfi_endproc
+ 304              	.LFE6:
+ 306 0006 00BF     		.section	.text.DebugMon_Handler,"ax",%progbits
+ 307              		.align	2
+ 308              		.weak	DebugMon_Handler
+ 309              		.thumb
+ 310              		.thumb_func
+ 312              	DebugMon_Handler:
+ 313              	.LFB7:
  326:../src/cr_startup_lpc17.c **** }
  327:../src/cr_startup_lpc17.c **** 
  328:../src/cr_startup_lpc17.c **** void DebugMon_Handler(void)
  329:../src/cr_startup_lpc17.c **** {
- 303              		.loc 1 329 0
- 304              		.cfi_startproc
- 305              		@ args = 0, pretend = 0, frame = 0
- 306              		@ frame_needed = 1, uses_anonymous_args = 0
- 307              		@ link register save eliminated.
- 308 0000 80B4     		push	{r7}
- 309              		.cfi_def_cfa_offset 4
- 310              		.cfi_offset 7, -4
- 311 0002 00AF     		add	r7, sp, #0
- 312              		.cfi_def_cfa_register 7
- 313              	.L20:
+ 314              		.loc 1 329 0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 0
+ 317              		@ frame_needed = 1, uses_anonymous_args = 0
+ 318              		@ link register save eliminated.
+ 319 0000 80B4     		push	{r7}
+ 320              	.LCFI15:
+ 321              		.cfi_def_cfa_offset 4
+ 322              		.cfi_offset 7, -4
+ 323 0002 00AF     		add	r7, sp, #0
+ 324              	.LCFI16:
+ 325              		.cfi_def_cfa_register 7
+ 326              	.L18:
  330:../src/cr_startup_lpc17.c ****     while(1)
  331:../src/cr_startup_lpc17.c ****     {
  332:../src/cr_startup_lpc17.c ****     }
- 314              		.loc 1 332 0 discriminator 1
- 315 0004 FEE7     		b	.L20
- 316              		.cfi_endproc
- 317              	.LFE7:
- 319 0006 00BF     		.section	.text.PendSV_Handler,"ax",%progbits
- 320              		.align	2
- 321              		.weak	PendSV_Handler
- 322              		.thumb
- 323              		.thumb_func
- 325              	PendSV_Handler:
- 326              	.LFB8:
+ 327              		.loc 1 332 0 discriminator 1
+ 328 0004 FEE7     		b	.L18
+ 329              		.cfi_endproc
+ 330              	.LFE7:
+ 332 0006 00BF     		.section	.text.PendSV_Handler,"ax",%progbits
+ 333              		.align	2
+ 334              		.weak	PendSV_Handler
+ 335              		.thumb
+ 336              		.thumb_func
+ 338              	PendSV_Handler:
+ 339              	.LFB8:
  333:../src/cr_startup_lpc17.c **** }
  334:../src/cr_startup_lpc17.c **** 
  335:../src/cr_startup_lpc17.c **** void PendSV_Handler(void)
  336:../src/cr_startup_lpc17.c **** {
- 327              		.loc 1 336 0
- 328              		.cfi_startproc
- 329              		@ args = 0, pretend = 0, frame = 0
- 330              		@ frame_needed = 1, uses_anonymous_args = 0
- 331              		@ link register save eliminated.
- 332 0000 80B4     		push	{r7}
- 333              		.cfi_def_cfa_offset 4
- 334              		.cfi_offset 7, -4
- 335 0002 00AF     		add	r7, sp, #0
- 336              		.cfi_def_cfa_register 7
- 337              	.L22:
+ 340              		.loc 1 336 0
+ 341              		.cfi_startproc
+ 342              		@ args = 0, pretend = 0, frame = 0
+ 343              		@ frame_needed = 1, uses_anonymous_args = 0
+ 344              		@ link register save eliminated.
+ 345 0000 80B4     		push	{r7}
+ 346              	.LCFI17:
+ 347              		.cfi_def_cfa_offset 4
+ 348              		.cfi_offset 7, -4
+ 349 0002 00AF     		add	r7, sp, #0
+ 350              	.LCFI18:
+ 351              		.cfi_def_cfa_register 7
+ 352              	.L20:
  337:../src/cr_startup_lpc17.c ****     while(1)
  338:../src/cr_startup_lpc17.c ****     {
  339:../src/cr_startup_lpc17.c ****     }
- 338              		.loc 1 339 0 discriminator 1
- 339 0004 FEE7     		b	.L22
- 340              		.cfi_endproc
- 341              	.LFE8:
- 343 0006 00BF     		.section	.text.SysTick_Handler,"ax",%progbits
- 344              		.align	2
- 345              		.weak	SysTick_Handler
- 346              		.thumb
- 347              		.thumb_func
- 349              	SysTick_Handler:
- 350              	.LFB9:
+ 353              		.loc 1 339 0 discriminator 1
+ 354 0004 FEE7     		b	.L20
+ 355              		.cfi_endproc
+ 356              	.LFE8:
+ 358 0006 00BF     		.section	.text.SysTick_Handler,"ax",%progbits
+ 359              		.align	2
+ 360              		.weak	SysTick_Handler
+ 361              		.thumb
+ 362              		.thumb_func
+ 364              	SysTick_Handler:
+ 365              	.LFB9:
  340:../src/cr_startup_lpc17.c **** }
  341:../src/cr_startup_lpc17.c **** 
  342:../src/cr_startup_lpc17.c **** void SysTick_Handler(void) 
  343:../src/cr_startup_lpc17.c **** {
- 351              		.loc 1 343 0
- 352              		.cfi_startproc
- 353              		@ args = 0, pretend = 0, frame = 0
- 354              		@ frame_needed = 1, uses_anonymous_args = 0
- 355              		@ link register save eliminated.
- 356 0000 80B4     		push	{r7}
- 357              		.cfi_def_cfa_offset 4
- 358              		.cfi_offset 7, -4
- 359 0002 00AF     		add	r7, sp, #0
- 360              		.cfi_def_cfa_register 7
- 361              	.L24:
+ 366              		.loc 1 343 0
+ 367              		.cfi_startproc
+ 368              		@ args = 0, pretend = 0, frame = 0
+ 369              		@ frame_needed = 1, uses_anonymous_args = 0
+ 370              		@ link register save eliminated.
+ 371 0000 80B4     		push	{r7}
+ 372              	.LCFI19:
+ 373              		.cfi_def_cfa_offset 4
+ 374              		.cfi_offset 7, -4
+ 375 0002 00AF     		add	r7, sp, #0
+ 376              	.LCFI20:
+ 377              		.cfi_def_cfa_register 7
+ 378              	.L22:
  344:../src/cr_startup_lpc17.c ****     while(1)
  345:../src/cr_startup_lpc17.c ****     {
  346:../src/cr_startup_lpc17.c ****     }
- 362              		.loc 1 346 0 discriminator 1
- 363 0004 FEE7     		b	.L24
- 364              		.cfi_endproc
- 365              	.LFE9:
- 367 0006 00BF     		.section	.text.IntDefaultHandler,"ax",%progbits
- 368              		.align	2
- 369              		.weak	IntDefaultHandler
- 370              		.thumb
- 371              		.thumb_func
- 373              	IntDefaultHandler:
- 374              	.LFB10:
+ 379              		.loc 1 346 0 discriminator 1
+ 380 0004 FEE7     		b	.L22
+ 381              		.cfi_endproc
+ 382              	.LFE9:
+ 384 0006 00BF     		.section	.text.IntDefaultHandler,"ax",%progbits
+ 385              		.align	2
+ 386              		.weak	IntDefaultHandler
+ 387              		.thumb
+ 388              		.thumb_func
+ 390              	IntDefaultHandler:
+ 391              	.LFB10:
  347:../src/cr_startup_lpc17.c **** }
  348:../src/cr_startup_lpc17.c **** 
  349:../src/cr_startup_lpc17.c **** 
@@ -707,175 +724,172 @@
  355:../src/cr_startup_lpc17.c **** //*****************************************************************************
  356:../src/cr_startup_lpc17.c **** void IntDefaultHandler(void)
  357:../src/cr_startup_lpc17.c **** {
- 375              		.loc 1 357 0
- 376              		.cfi_startproc
- 377              		@ args = 0, pretend = 0, frame = 0
- 378              		@ frame_needed = 1, uses_anonymous_args = 0
- 379              		@ link register save eliminated.
- 380 0000 80B4     		push	{r7}
- 381              		.cfi_def_cfa_offset 4
- 382              		.cfi_offset 7, -4
- 383 0002 00AF     		add	r7, sp, #0
- 384              		.cfi_def_cfa_register 7
- 385              	.L26:
+ 392              		.loc 1 357 0
+ 393              		.cfi_startproc
+ 394              		@ args = 0, pretend = 0, frame = 0
+ 395              		@ frame_needed = 1, uses_anonymous_args = 0
+ 396              		@ link register save eliminated.
+ 397 0000 80B4     		push	{r7}
+ 398              	.LCFI21:
+ 399              		.cfi_def_cfa_offset 4
+ 400              		.cfi_offset 7, -4
+ 401 0002 00AF     		add	r7, sp, #0
+ 402              	.LCFI22:
+ 403              		.cfi_def_cfa_register 7
+ 404              	.L24:
  358:../src/cr_startup_lpc17.c ****     //
  359:../src/cr_startup_lpc17.c ****     // Go into an infinite loop.
  360:../src/cr_startup_lpc17.c ****     //
  361:../src/cr_startup_lpc17.c ****     while(1)
  362:../src/cr_startup_lpc17.c ****     {
  363:../src/cr_startup_lpc17.c ****     }
- 386              		.loc 1 363 0 discriminator 1
- 387 0004 FEE7     		b	.L26
- 388              		.cfi_endproc
- 389              	.LFE10:
- 391              		.weak	CANActivity_IRQHandler
- 392              		.thumb_set CANActivity_IRQHandler,IntDefaultHandler
- 393              		.weak	USBActivity_IRQHandler
- 394              		.thumb_set USBActivity_IRQHandler,IntDefaultHandler
- 395              		.weak	PLL1_IRQHandler
- 396              		.thumb_set PLL1_IRQHandler,IntDefaultHandler
- 397              		.weak	QEI_IRQHandler
- 398              		.thumb_set QEI_IRQHandler,IntDefaultHandler
- 399              		.weak	MCPWM_IRQHandler
- 400              		.thumb_set MCPWM_IRQHandler,IntDefaultHandler
- 401              		.weak	RIT_IRQHandler
- 402              		.thumb_set RIT_IRQHandler,IntDefaultHandler
- 403              		.weak	ENET_IRQHandler
- 404              		.thumb_set ENET_IRQHandler,IntDefaultHandler
- 405              		.weak	I2S_IRQHandler
- 406              		.thumb_set I2S_IRQHandler,IntDefaultHandler
- 407              		.weak	DMA_IRQHandler
- 408              		.thumb_set DMA_IRQHandler,IntDefaultHandler
- 409              		.weak	CAN_IRQHandler
- 410              		.thumb_set CAN_IRQHandler,IntDefaultHandler
- 411              		.weak	USB_IRQHandler
- 412              		.thumb_set USB_IRQHandler,IntDefaultHandler
- 413              		.weak	BOD_IRQHandler
- 414              		.thumb_set BOD_IRQHandler,IntDefaultHandler
- 415              		.weak	ADC_IRQHandler
- 416              		.thumb_set ADC_IRQHandler,IntDefaultHandler
- 417              		.weak	EINT3_IRQHandler
- 418              		.thumb_set EINT3_IRQHandler,IntDefaultHandler
- 419              		.weak	EINT2_IRQHandler
- 420              		.thumb_set EINT2_IRQHandler,IntDefaultHandler
- 421              		.weak	EINT1_IRQHandler
- 422              		.thumb_set EINT1_IRQHandler,IntDefaultHandler
- 423              		.weak	EINT0_IRQHandler
- 424              		.thumb_set EINT0_IRQHandler,IntDefaultHandler
- 425              		.weak	RTC_IRQHandler
- 426              		.thumb_set RTC_IRQHandler,IntDefaultHandler
- 427              		.weak	PLL0_IRQHandler
- 428              		.thumb_set PLL0_IRQHandler,IntDefaultHandler
- 429              		.weak	SSP1_IRQHandler
- 430              		.thumb_set SSP1_IRQHandler,IntDefaultHandler
- 431              		.weak	SSP0_IRQHandler
- 432              		.thumb_set SSP0_IRQHandler,IntDefaultHandler
- 433              		.weak	SPI_IRQHandler
- 434              		.thumb_set SPI_IRQHandler,IntDefaultHandler
- 435              		.weak	I2C2_IRQHandler
- 436              		.thumb_set I2C2_IRQHandler,IntDefaultHandler
- 437              		.weak	I2C1_IRQHandler
- 438              		.thumb_set I2C1_IRQHandler,IntDefaultHandler
- 439              		.weak	I2C0_IRQHandler
- 440              		.thumb_set I2C0_IRQHandler,IntDefaultHandler
- 441              		.weak	PWM1_IRQHandler
- 442              		.thumb_set PWM1_IRQHandler,IntDefaultHandler
- 443              		.weak	UART3_IRQHandler
- 444              		.thumb_set UART3_IRQHandler,IntDefaultHandler
- 445              		.weak	UART2_IRQHandler
- 446              		.thumb_set UART2_IRQHandler,IntDefaultHandler
- 447              		.weak	UART1_IRQHandler
- 448              		.thumb_set UART1_IRQHandler,IntDefaultHandler
- 449              		.weak	UART0_IRQHandler
- 450              		.thumb_set UART0_IRQHandler,IntDefaultHandler
- 451              		.weak	TIMER3_IRQHandler
- 452              		.thumb_set TIMER3_IRQHandler,IntDefaultHandler
- 453              		.weak	TIMER2_IRQHandler
- 454              		.thumb_set TIMER2_IRQHandler,IntDefaultHandler
- 455              		.weak	TIMER1_IRQHandler
- 456              		.thumb_set TIMER1_IRQHandler,IntDefaultHandler
- 457              		.weak	TIMER0_IRQHandler
- 458              		.thumb_set TIMER0_IRQHandler,IntDefaultHandler
- 459              		.weak	WDT_IRQHandler
- 460              		.thumb_set WDT_IRQHandler,IntDefaultHandler
- 461 0006 00BF     		.text
- 462              	.Letext0:
+ 405              		.loc 1 363 0 discriminator 1
+ 406 0004 FEE7     		b	.L24
+ 407              		.cfi_endproc
+ 408              	.LFE10:
+ 410              		.weak	WDT_IRQHandler
+ 411              		.thumb_set WDT_IRQHandler,IntDefaultHandler
+ 412              		.weak	TIMER0_IRQHandler
+ 413              		.thumb_set TIMER0_IRQHandler,IntDefaultHandler
+ 414              		.weak	TIMER1_IRQHandler
+ 415              		.thumb_set TIMER1_IRQHandler,IntDefaultHandler
+ 416              		.weak	TIMER2_IRQHandler
+ 417              		.thumb_set TIMER2_IRQHandler,IntDefaultHandler
+ 418              		.weak	TIMER3_IRQHandler
+ 419              		.thumb_set TIMER3_IRQHandler,IntDefaultHandler
+ 420              		.weak	UART0_IRQHandler
+ 421              		.thumb_set UART0_IRQHandler,IntDefaultHandler
+ 422              		.weak	UART1_IRQHandler
+ 423              		.thumb_set UART1_IRQHandler,IntDefaultHandler
+ 424              		.weak	UART2_IRQHandler
+ 425              		.thumb_set UART2_IRQHandler,IntDefaultHandler
+ 426              		.weak	UART3_IRQHandler
+ 427              		.thumb_set UART3_IRQHandler,IntDefaultHandler
+ 428              		.weak	PWM1_IRQHandler
+ 429              		.thumb_set PWM1_IRQHandler,IntDefaultHandler
+ 430              		.weak	I2C0_IRQHandler
+ 431              		.thumb_set I2C0_IRQHandler,IntDefaultHandler
+ 432              		.weak	I2C1_IRQHandler
+ 433              		.thumb_set I2C1_IRQHandler,IntDefaultHandler
+ 434              		.weak	I2C2_IRQHandler
+ 435              		.thumb_set I2C2_IRQHandler,IntDefaultHandler
+ 436              		.weak	SPI_IRQHandler
+ 437              		.thumb_set SPI_IRQHandler,IntDefaultHandler
+ 438              		.weak	SSP0_IRQHandler
+ 439              		.thumb_set SSP0_IRQHandler,IntDefaultHandler
+ 440              		.weak	SSP1_IRQHandler
+ 441              		.thumb_set SSP1_IRQHandler,IntDefaultHandler
+ 442              		.weak	PLL0_IRQHandler
+ 443              		.thumb_set PLL0_IRQHandler,IntDefaultHandler
+ 444              		.weak	RTC_IRQHandler
+ 445              		.thumb_set RTC_IRQHandler,IntDefaultHandler
+ 446              		.weak	EINT0_IRQHandler
+ 447              		.thumb_set EINT0_IRQHandler,IntDefaultHandler
+ 448              		.weak	EINT1_IRQHandler
+ 449              		.thumb_set EINT1_IRQHandler,IntDefaultHandler
+ 450              		.weak	EINT2_IRQHandler
+ 451              		.thumb_set EINT2_IRQHandler,IntDefaultHandler
+ 452              		.weak	EINT3_IRQHandler
+ 453              		.thumb_set EINT3_IRQHandler,IntDefaultHandler
+ 454              		.weak	ADC_IRQHandler
+ 455              		.thumb_set ADC_IRQHandler,IntDefaultHandler
+ 456              		.weak	BOD_IRQHandler
+ 457              		.thumb_set BOD_IRQHandler,IntDefaultHandler
+ 458              		.weak	USB_IRQHandler
+ 459              		.thumb_set USB_IRQHandler,IntDefaultHandler
+ 460              		.weak	CAN_IRQHandler
+ 461              		.thumb_set CAN_IRQHandler,IntDefaultHandler
+ 462              		.weak	DMA_IRQHandler
+ 463              		.thumb_set DMA_IRQHandler,IntDefaultHandler
+ 464              		.weak	I2S_IRQHandler
+ 465              		.thumb_set I2S_IRQHandler,IntDefaultHandler
+ 466              		.weak	ENET_IRQHandler
+ 467              		.thumb_set ENET_IRQHandler,IntDefaultHandler
+ 468              		.weak	RIT_IRQHandler
+ 469              		.thumb_set RIT_IRQHandler,IntDefaultHandler
+ 470              		.weak	MCPWM_IRQHandler
+ 471              		.thumb_set MCPWM_IRQHandler,IntDefaultHandler
+ 472              		.weak	QEI_IRQHandler
+ 473              		.thumb_set QEI_IRQHandler,IntDefaultHandler
+ 474              		.weak	PLL1_IRQHandler
+ 475              		.thumb_set PLL1_IRQHandler,IntDefaultHandler
+ 476              		.weak	USBActivity_IRQHandler
+ 477              		.thumb_set USBActivity_IRQHandler,IntDefaultHandler
+ 478              		.weak	CANActivity_IRQHandler
+ 479              		.thumb_set CANActivity_IRQHandler,IntDefaultHandler
+ 480 0006 00BF     		.text
+ 481              	.Letext0:
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 cr_startup_lpc17.c
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:24     .isr_vector:0000000000000000 g_pfnVectors
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:21     .isr_vector:0000000000000000 $d
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:82     .text.ResetISR:0000000000000000 ResetISR
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:157    .text.NMI_Handler:0000000000000000 NMI_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:181    .text.HardFault_Handler:0000000000000000 HardFault_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:205    .text.MemManage_Handler:0000000000000000 MemManage_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:229    .text.BusFault_Handler:0000000000000000 BusFault_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:253    .text.UsageFault_Handler:0000000000000000 UsageFault_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:277    .text.SVCall_Handler:0000000000000000 SVCall_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:301    .text.DebugMon_Handler:0000000000000000 DebugMon_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:325    .text.PendSV_Handler:0000000000000000 PendSV_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:349    .text.SysTick_Handler:0000000000000000 SysTick_Handler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 WDT_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 TIMER0_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 TIMER1_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 TIMER2_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 TIMER3_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 UART0_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 UART1_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 UART2_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 UART3_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 PWM1_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 I2C0_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 I2C1_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 I2C2_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 SPI_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 SSP0_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 SSP1_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 PLL0_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 RTC_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 EINT0_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 EINT1_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 EINT2_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 EINT3_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 ADC_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 BOD_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 USB_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 CAN_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 DMA_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 I2S_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 ENET_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 RIT_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 MCPWM_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 QEI_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 PLL1_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 USBActivity_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 CANActivity_IRQHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:77     .text.ResetISR:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:127    .text.ResetISR:0000000000000030 zero_loop
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:145    .text.ResetISR:0000000000000044 $d
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:152    .text.NMI_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:176    .text.HardFault_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:200    .text.MemManage_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:224    .text.BusFault_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:248    .text.UsageFault_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:272    .text.SVCall_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:296    .text.DebugMon_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:320    .text.PendSV_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:344    .text.SysTick_Handler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:368    .text.IntDefaultHandler:0000000000000000 $t
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:373    .text.IntDefaultHandler:0000000000000000 IntDefaultHandler
-/var/folders/cb/5_t_trh565vdyjfzd6gzn9vh0000gn/T//ccvGhxUz.s:4225   .text.ResetISR:0000000000000050 $d
-                     .debug_frame:0000000000000010 $d
-                           .group:0000000000000000 wm4.0.0c5e979f1ec464b8f03bc190bd321363
-                           .group:0000000000000000 wm4.redlib_version.h.14.62abddb5b4efb2dd619a7dca5647eb78
-                           .group:0000000000000000 wm4.libconfigarm.h.18.48d18a57a6aa6fedadbcea02294a713f
-                           .group:0000000000000000 wm4.stdint.h.30.30f575a65a9bde434c705acf40986e1b
+                            *ABS*:00000000 cr_startup_lpc17.c
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:23     .isr_vector:00000000 g_pfnVectors
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:20     .isr_vector:00000000 $d
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:81     .text.ResetISR:00000000 ResetISR
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:156    .text.NMI_Handler:00000000 NMI_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:182    .text.HardFault_Handler:00000000 HardFault_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:208    .text.MemManage_Handler:00000000 MemManage_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:234    .text.BusFault_Handler:00000000 BusFault_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:260    .text.UsageFault_Handler:00000000 UsageFault_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:286    .text.SVCall_Handler:00000000 SVCall_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:312    .text.DebugMon_Handler:00000000 DebugMon_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:338    .text.PendSV_Handler:00000000 PendSV_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:364    .text.SysTick_Handler:00000000 SysTick_Handler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 WDT_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 TIMER0_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 TIMER1_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 TIMER2_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 TIMER3_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 UART0_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 UART1_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 UART2_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 UART3_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 PWM1_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 I2C0_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 I2C1_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 I2C2_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 SPI_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 SSP0_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 SSP1_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 PLL0_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 RTC_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 EINT0_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 EINT1_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 EINT2_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 EINT3_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 ADC_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 BOD_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 USB_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 CAN_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 DMA_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 I2S_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 ENET_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 RIT_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 MCPWM_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 QEI_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 PLL1_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 USBActivity_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 CANActivity_IRQHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:76     .text.ResetISR:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:133    .text.ResetISR:0000004a zero_loop
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:151    .text.NMI_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:177    .text.HardFault_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:203    .text.MemManage_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:229    .text.BusFault_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:255    .text.UsageFault_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:281    .text.SVCall_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:307    .text.DebugMon_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:333    .text.PendSV_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:359    .text.SysTick_Handler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:385    .text.IntDefaultHandler:00000000 $t
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:390    .text.IntDefaultHandler:00000000 IntDefaultHandler
+C:\Users\ngnig\AppData\Local\Temp\cc6CVjh3.s:150    .text.ResetISR:0000005e $d
+                     .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 _vStackTop
+_etext
+_data
+_edata
 _bss
 _ebss
 SystemInit
 __main
-_etext
-_data
-_edata
