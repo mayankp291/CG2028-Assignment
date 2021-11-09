@@ -1,0 +1,179 @@
+ 	.syntax unified
+ 	.cpu cortex-m3
+ 	.thumb
+ 	.align 2
+ 	.global	classification
+ 	.thumb_func
+
+@ CG2028 Assignment, Sem 2, AY 2021/21
+@ (c) CG2028 Teaching Team, ECE NUS, 2021
+
+@ student 1: Name: Nigel Ng, Matriculation No.: A0217408H
+@ student 2: Name: , Matriculation No.:
+@ eg: student 1: Name: John Doe , Matriculation No.: A021234N
+
+@Register map
+@R0 - N, returns class
+@R1 - points
+@R2 - label
+@R3 - sample
+@R4 - register for calculation
+@R5 - register for calculation
+@R6 - general purpose register for writing/ reading
+@R7 - general purpose register for writing/ reading
+@R8 - intermediate register for storing count
+@R9 - pointer to read points (no pun intended)
+@R10 - pointer to read label
+
+classification:
+@ PUSH / save (only those) registers which are modified by your function
+		PUSH {R1-R10,R14}
+@ parameter registers need not be saved.
+
+@ write asm function body here
+
+@ initialise current class to 0
+LDR R6,=curr_class	@extract value of x
+MOV R7, #0
+STR R7, [R6]
+
+@ initialise min_distance to max signed positive value
+LDR R6, =min_distance
+MOV R7, #0x0FFFFFFF
+STR R7, [R6]
+
+@ extract N into register 8 for comparison later.
+MOV R8, R0 @extract N into R8
+
+@ extract sample_x
+LDR R7, [R3]	@extract value of x
+LDR R6, =sample_x
+STR R7, [R6]
+
+@ extract sample_y
+LDR R7, [R3,#4]	@extract value of y
+LDR R6, =sample_y
+STR R7, [R6]
+
+@ main chunk to calculate min_distance
+LOOP:
+	BL GET_EUCLIDEAN
+	SUBS R8, #1
+	BNE LOOP
+
+@ prepare value to return (class) to C program in R0
+BL RETURN_VALUE
+
+@ POP / restore original register values. DO NOT save or restore R0. Why?
+POP {R1-R10,R14}
+
+@ return to C program
+BX	LR
+
+@@@						  @@@
+@	Starting of subroutines @
+@@@						  @@@
+
+@gets the euclidean distance of current point of reference and sample.
+GET_EUCLIDEAN:
+
+@ extract point_x
+	LDR R9, [R1], #4 @ gets x point, prepares to store y
+	LDR R6, =point_x
+	STR R9, [R6]
+
+@ extract point_y
+	LDR R9, [R1], #4 @ gets y point, prepares to store next value
+	LDR R6, =point_y
+	STR R9, [R6]
+
+@ get label
+	LDR R10, [R2], #4	@get value of label. either 0 or 1 and increment accordingly
+@ calculate euclidean distance
+
+@get (x_sample - x_point)^2
+	@load point x, sample x
+	LDR R6, =point_x
+	LDR R7, =sample_x
+
+	LDR R4, [R6]	@stores point x value into R4
+	LDR R5, [R7] 	@stores sample x value into R5
+	SUB R5, R4		@gets difference between sample and point, store to R5
+	MOV R4, R5		@stores difference to R4
+	MUL R4, R5		@calculate the squared value of difference
+
+	LDR R6, =x_s	@get address of x squared variable
+	STR R4, [R6]	@stores x^2 into x_s variable
+
+@get (y_sample - y_point)^2
+	@load point y, sample y
+	LDR R6, =point_y
+	LDR R7, =sample_y
+
+	LDR R4, [R6]	@loads point y value into R4
+	LDR R5, [R7] 	@loads sample y value into R5
+	SUB R5, R4		@gets difference between sample and point, store to R5
+	MOV R4, R5	@stores difference to R4
+	MUL R4, R5		@calculate the squared value of difference
+
+	LDR R6, =y_s	@get address of y squared variable
+	STR R4, [R6]	@stores y^2 into y_s variable
+
+@add both variables to get curr_distance
+	LDR R6, =x_s 	@get address of x^2
+	LDR R7, =y_s	@get address of y^2
+	LDR R4, [R6]	@load x^2 into R4
+	LDR R5, [R7]	@load y^2 into R5
+	ADD R4, R5		@add x^2 and y^2 into R4
+
+	LDR R6, =curr_distance	@get address of current distance
+	STR R4, [R6]	@store x^2 + y^2 into curr_distance
+
+@ compare with min_distance. If lower, set label and min_distance
+	LDR R6, =min_distance	@get address of min distance
+	LDR R7, =curr_distance	@get address of curr distance
+	LDR R4, [R7]	@loads value of current distance into R4
+	LDR R5, [R6]	@loads value of min distance into R5
+
+	CMP R4, R5	@compare current and min distance
+	BLE SET_NEW_DISTANCE_AND_UPDATE_LABEL	@if current distance is <= min_distance, set new distance
+	BX LR	@end comparison, return to main
+
+@sets R0 to the class
+RETURN_VALUE:
+		LDR R7,=curr_class	@gets current class reading (most updated)
+		LDR R0, [R7]
+		@MOV R0, R4
+		BX LR
+
+@sets new minimum distance and updates label
+@at this stage, [R4] <= [R5]
+SET_NEW_DISTANCE_AND_UPDATE_LABEL:
+	LDR R6, =min_distance	@get address of min distance
+	STR R4, [R6]	@overwrite minimum distance with current distance
+	@now, to set the label too!
+	LDR R7, =curr_class	@get address of current class
+	STR R10, [R7]	@stores current label to latest class
+
+	BX LR
+
+@label: .word value
+
+
+@@@				@@@
+@	VARIABLES	  @
+@@@				@@@
+
+@.lcomm label num_bytes - these values are important and thus are stored as static variables
+.lcomm sample_x 4	@x coordinate of a particular sample (not modified in calculations)
+.lcomm sample_y 4	@y coordinate of a particular sample (not modified in calculations)
+
+.lcomm point_x 4	@x coordinate of a reference point (to be modifed (N - 1) times)
+.lcomm point_y 4	@y coordinate of a reference point (to be modified (N - 1) times)
+
+.lcomm x_s 4 @x squared
+.lcomm y_s 4 @y squared
+
+.lcomm curr_distance 4
+.lcomm min_distance 4
+.lcomm curr_class 1	@most updated, correct class
