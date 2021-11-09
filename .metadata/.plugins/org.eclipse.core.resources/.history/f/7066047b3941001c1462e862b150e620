@@ -1,0 +1,74 @@
+#include "stdio.h"
+#define k 1
+
+
+// CG2028 Assignment, Sem 1, AY 2021/22
+// (c) CG2028 Teaching Team, ECE NUS, 2021
+
+extern int classification(int N, int* points, int* label, int* sample); // asm implementation
+int classification_c(int N, int* points, int* label, int* sample); // reference C implementation
+
+int main(void)
+{
+	//variables
+	int N = 16;
+	// think of the values below as numbers of the form x.y
+	// (decimal fixed point with 1 fractional decimal digits precision)
+	// which are scaled up to allow them to be used integers
+
+	//35, 0 -> 15,20
+	int points[32] = {65 , 16 , -30 , -18 , 79 , -6 , 6 , -30 , -94 , 56 , -23 , 76 , 3 , 48 , 46 , -47,
+			18 , -3 , 69 , 59 , -82 , -86 , 35 , 79 , 65 , 8 , -47 , -74 , 67 , 98 , 94 , 53,
+			-88 , 89 , -65 , -94 , -65 , 9 , 83 , 8 , 74 , -47 , 32 , 71 , -90 , 25 , -91 , -94,
+			-68 , -68 , 26 , -94 , -28 , -39 , 83 , -31 , 89 , -87 , 70 , 91 , -75 , -70 , -57 , -79,
+			-4 , 63 , -22 , 69 , 56 , 55 , -64 , -89 , 51 , 55 , 84 , -43 , -31 , -99 , -17 , -91,
+			-2 , 11 , -73 , -12 , -34 , -51 , -13 , 22 , -16 , -43 , 57 , 76 , 54 , 74 , -12 , -65,
+			-38 , -38 , -11 , 78 , 80 , 80 , 27 , -20 , 36 , -94 , 36 , 16 , -8 , -26 , 44 , 66,
+			27 , -2 , 21 , -22 , 22 , 8 , -29 , 51 , -71 , -69 , 79 , -97 , 86 , -43 , 25 , -4,
+			83 , -79 , 51 , 11 , 14 , -57 , 52 , 17 , 94 , -61 , -99 , -11 , 28 , 75 , -24 , -85,
+			-81 , 60 , -69 , -31 , -71 , -55 , -66 , 89 , -61 , 64 , -45 , 14 , -99 , 49 , 57 , -41};
+
+	int label[16] = {1 ,0 ,1 ,0 ,1 ,1 ,1 ,1 ,0 ,1 ,1 ,0 ,0 ,1 ,1 ,1};
+	int sample[2] = {25, 1};
+
+	// Call assembly language function to perform classification
+	printf( "asm: class = %d \n", classification(N, points, label, sample) ) ;
+	printf( "C  : class = %d \n", classification_c(N, points, label, sample) ) ;
+
+	while (1); //halt
+}
+
+int classification_c(int N, int* points, int* label, int* sample)
+{ 	// The implementation below is meant only for verifying your results.
+	
+	int i,j,n;
+	int class;// returned labels of k=1 nearest neighbors
+	int d[N]; // squared Euclidean distance
+	int d1;
+
+	
+	// calculate the squared distance between test sample and each training data points
+	for (i=0; i<N; i++){
+		d[i] = (points[2*i]-sample[0]) * (points[2*i]-sample[0])
+		+ (points[2*i+1]-sample[1])*(points[2*i+1]-sample[1]);
+	}
+
+	// print all distances
+	for (i=0; i<N; i++){
+		printf( "d%d = %d, class = %d \n",i+1, d[i],label[i]) ;
+	}
+
+	// find the k=1 nearest neighbors
+
+	d1 = d[0];
+	class = label[0];
+	for (j=0; j<N; j++){
+		if (d[j]<d1){
+			class = label[j];
+			d1 = d[j];
+		}
+	}
+	
+	return class;
+}
+
