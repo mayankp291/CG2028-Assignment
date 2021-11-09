@@ -26,7 +26,7 @@
 
 classification:
     PUSH {R1-R10,R14}
-	MOV R9, #0x0FFFFFFF		@initialise minimum distance to max signed int
+	MOV R9, #0x0FFFFFFF		@initialise minimym distance to max signed int
   	LDR R10, [R2], #4 @store label[0] and increment
 
 
