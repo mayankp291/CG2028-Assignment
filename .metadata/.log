@@ -709,3 +709,15 @@ Command-line arguments:  -os win32 -ws win32 -arch x86
 
 !ENTRY com.crt.ctrlcenter 4 -1 2021-11-09 14:07:38.317
 !MESSAGE Internal error: unable to locate launch delegate
+
+!ENTRY com.crt.dsfdebug 4 0 2021-11-09 14:17:45.851
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 14:17:45.851
+!MESSAGE 16: Target error from status-poll
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 14:17:45.851
+!MESSAGE IO Error - cable disconnected?
+!SUBENTRY 1 com.crt.dsfdebug 4 0 2021-11-09 14:17:45.851
+!MESSAGE Not connected to emulator.
+
+!ENTRY com.crt.log 1 0 2021-11-09 14:18:02.651
+!MESSAGE Drivers loaded in 1639 milliseconds
