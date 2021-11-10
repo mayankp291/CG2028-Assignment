@@ -18,8 +18,8 @@
 @R3 - pointer to sample
 @R4 - stores point
 @R5 - stores sample
-@R6 - calculates (difference in x)^2, get value of label[i]
-@R7 - calculates (difference in y)^2, stores value of CURRENT_DISTANCE
+@R6 - calculates (difference in x),(difference in x)^2
+@R7 - calculates (difference in y),(difference in y)^2, stores value of CURRENT_DISTANCE
 @R8 - stores CURRENT_DISTANCE_LABEL
 @R9 - stores MIN_DISTANCE
 @R10 -stores MIN_DISTANCE_LABEL, class
