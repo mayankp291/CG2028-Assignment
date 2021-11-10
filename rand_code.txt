@@ -1,5 +1,0 @@
-		@LDR R7,=sample_y	@test reading values
-		@LDR R0, [R7]		@test reading values
-		@MOVW R0, #5
-		@LDR R7,=curr_class
-		@LDR R0, [R7]

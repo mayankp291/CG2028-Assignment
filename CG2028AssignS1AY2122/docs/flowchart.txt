@@ -1,3 +1,5 @@
+for flowchart
+
 declare: 		min_distance = BIG_INT,		MIN_DISTANCE_LABEL= 0,  sample_x  , sample_y		point_x = 0,					 point_y = 0
 
 
