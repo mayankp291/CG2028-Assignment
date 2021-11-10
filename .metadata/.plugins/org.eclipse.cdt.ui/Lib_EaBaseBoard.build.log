@@ -1,6 +1,6 @@
-14:07:31 **** Build of configuration Debug for project Lib_EaBaseBoard ****
+20:36:41 **** Build of configuration Debug for project Lib_EaBaseBoard ****
 make all 
 make: Nothing to be done for `all'.
 
-14:07:31 Build Finished (took 125ms)
+20:36:44 Build Finished (took 2s.559ms)
 
