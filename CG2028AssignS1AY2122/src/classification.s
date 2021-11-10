@@ -8,9 +8,8 @@
 @ CG2028 Assignment, Sem 2, AY 2021/21
 @ (c) CG2028 Teaching Team, ECE NUS, 2021
 
-@ student 1: Name: , Matriculation No.:
-@ student 2: Name: , Matriculation No.:
-@ eg: student 1: Name: John Doe , Matriculation No.: A021234N
+@ student 1: Name: Nigel Ng, Matriculation No.: A0217408H
+@ student 2: Name: Mayank Panjiyara, Matriculation No.: A0221571N
 
 @Register map
 @R0 - N, returns class
@@ -26,19 +25,13 @@
 @R10 -stores MIN_DISTANCE_LABEL, class
 
 classification:
-@ PUSH / save (only those) registers which are modified by your function
     PUSH {R1-R10,R14}
-@ parameter registers need not be saved.
-
-@ write asm function body here
 
   	BL EUCLIDEAN_DISTANCE
-  	LDR R10, [R2], #4 @store label[0] and increment
-  	MOV R9, R7 @move CURRENT_DISTANCE to R9, initialise R9
-	SUBS R0, #1 @N - 1
+  	LDR R10, [R2], #4       @store label[0] and increment
+  	MOV R9, R7				@move CURRENT_DISTANCE to R9, initialise R9
+	SUBS R0, #1				@N - 1
 
-@ branch to SUBROUTINE for illustration only
-@ you could write your code without SUBROUTINE
  LOOP:
 	BL EUCLIDEAN_DISTANCE 	@get euclidean distance, update CURRENT_DISTANCE
 	LDR R8, [R2], #4	    @store label[i] and increment
